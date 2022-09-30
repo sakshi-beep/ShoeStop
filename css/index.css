@@ -1,0 +1,277 @@
+*{
+    margin:0%;
+    padding:0%;
+}
+
+
+li{
+    list-style: none;
+}
+
+header{
+    display: flex;
+    background-color:#2B2B2B;
+    background: transparent;        
+min-height:5rem;
+align-items: center;
+border-width:1px;
+border-style: solid;
+}
+
+img{
+    margin-left: 1rem;
+}
+
+ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+input{
+    margin-left: 2rem;
+    min-width: 690px;
+    height: 2.7rem;
+    left: 369px;
+    top: 19px;
+    padding:10px;   
+    font-size: 1.2em;
+    letter-spacing: 0.1em;
+    font-family:monospace;
+}
+
+.first-section{
+    display:flex;
+    justify-content: center;
+    align-items: flex-end;
+    background:url(../images/shoelogo.svg);
+     min-width:960px;
+    height:760px; 
+    background-repeat: no-repeat;
+    background-size: 24rem;
+    background-position-y:4rem;
+    background-position-x:center;
+    animation: changesize 3.5s forwards;
+    
+}
+
+@keyframes changesize {
+    0% {
+        opacity: 0%;
+        /* background-size: 0rem; */
+    }
+
+    100% {
+        opacity: 100%;
+        /* background-size: 24rem; */
+    }
+}
+
+.desccontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:2rem;
+    padding:2rem;
+    animation:increaseOpacity ease-in 1.5s forwards;
+}
+
+@keyframes increaseOpacity {
+    0%{
+        opacity: 0%;
+        transform:translateY(-50%)
+    }
+
+     100%{
+        opacity: 100%;
+        transform:translateY(0%)
+     }
+}
+
+.heading{
+    font-size:3.4em;
+    font-weight:800;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.minidesc{
+font-size: 1.8em;
+}
+
+.btn-action{
+    border-radius: 0.4rem;
+    border-width: 2px;
+    border-style: solid;
+    /* background-color: rgb(18, 16, 16); */
+    background-color: white;
+    width:10rem;
+    height:3rem;
+    font-size: larger;
+color: black;
+font-weight:bold;
+transition: background-color;
+cursor: pointer;
+}
+
+.btn-action:hover{
+    background-color:black;
+    color:white;
+    border-style:none;
+}
+
+.btn-action-search{
+    display: flex;
+    align-items: center;
+    border-width:1px;
+    border-style: solid;
+    background-color:white;
+    width: 4rem;
+    height:2.8rem;
+    font-size: larger;
+    /* margin-left: 0.3rem; */
+color: white;
+font-weight:bold;
+transition: background-color;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+}
+
+.btn-action-search:hover{
+background-color:#c0bebe;
+cursor: pointer;
+
+}
+
+.carticon{
+    cursor: pointer;
+}
+
+
+.cartdiv{
+    /* background-color: aqua; */
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+    
+    gap: 2px;
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    align-items: center;
+    position: absolute;
+    background-color:white;
+    min-width: 160px;
+    box-shadow: 0px 8px 10px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: flex;
+  }
+
+  .dropdown-items{
+font-size: 1.4em;
+text-align: center;
+padding:10px;
+margin:5px;
+border-width:1px;
+border-style: solid;
+cursor: pointer;
+background: none;
+  }
+
+  .dropdown-items:hover{
+border:none;
+border-style: none;
+color:white;
+cursor: pointer;
+background-color: black;
+padding:12px;
+      }
+
+
+.categories-container{
+    display: flex;
+    justify-content:space-evenly;
+    /* gap: 123px; */
+    margin-top: 46px;
+    /* padding:10px; */
+    align-items: center;
+}
+
+
+.categories-items{
+    background-repeat: no-repeat;
+    width: 263px;
+    height:345px;
+    align-items: center;
+    transition:max-width,min-height 2s;
+    cursor: pointer;
+    /* box-shadow: 5px 5px; */
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+    border-width: 1px;
+    border-style:solid;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    animation:showcategories ease-in 2s forwards;
+}
+
+
+@keyframes showcategories {
+    0%{
+        opacity: 0%;
+        
+    }
+
+     100%{
+        opacity: 100%;
+        
+     }
+}
+
+      #casual{
+        background:url(../images/casual.svg);
+      }
+
+      .categorydesc{
+        font-size: 2.5em;
+        font-weight: bold;
+        font-family: monospace;
+      }
+
+
+      #casual:hover {
+       background-size:300px;
+    background-position: center;
+    }
+
+    #sports:hover {
+        background-size:310px;
+     background-position: center;
+     }
+
+     #formal:hover {
+        background-size:310px;
+     background-position: center;
+     }
+
+
+      #sports{
+        background:url(../images/sports.svg);
+      }
+
+      #formal{
+        background:url(../images/formal.svg);
+      }
