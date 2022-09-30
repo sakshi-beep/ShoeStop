@@ -10,12 +10,17 @@
                 document.getElementById("emailvalidate").innerHTML = "*email is required";
                 event.preventDefault();
                 return false;
+            }else{
+                document.getElementById("emailvalidate").innerHTML = "";
             }
             
                 if(passwordfield.length<1){
                     document.getElementById("passwordvalidate").innerHTML = "*password is required";
                 event.preventDefault();
                 return false;   
+                }
+                else{
+                    document.getElementById("passwordvalidate").innerHTML = ""; 
                 }
             
         
