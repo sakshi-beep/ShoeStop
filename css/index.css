@@ -1,81 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&display=swap');
+
 *{
-    margin:0%;
-    padding:0%;
-}
-
-
-li{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
     list-style: none;
+    text-decoration: none;
 }
 
-header{
-    display: flex;
-    background-color:#2B2B2B;
-    background: transparent;        
-min-height:5rem;
-align-items: center;
-border-width:1px;
-border-style: solid;
-}
-
-img{
-    margin-left: 1rem;
-}
-
-ul{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-input{
-    margin-left: 2rem;
-    min-width: 690px;
-    height: 2.7rem;
-    left: 369px;
-    top: 19px;
-    padding:10px;   
-    font-size: 1.2em;
-    letter-spacing: 0.1em;
-    font-family:monospace;
-}
-
-.first-section{
+body{
+    width:100vw;
+    height:100vh;
     display:flex;
-    justify-content: center;
-    align-items: flex-end;
-    background:url(../images/shoelogo.svg);
-     min-width:960px;
-    height:760px; 
-    background-repeat: no-repeat;
-    background-size: 24rem;
-    background-position-y:4rem;
-    background-position-x:center;
-    animation: changesize 3.5s forwards;
-    
-}
-
-@keyframes changesize {
-    0% {
-        opacity: 0%;
-        /* background-size: 0rem; */
-    }
-
-    100% {
-        opacity: 100%;
-        /* background-size: 24rem; */
-    }
-}
-
-.desccontainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    gap:2rem;
-    padding:2rem;
+    align-items: center;
+}
+
+.btn-logout{
+    background-color: #000000;
+color:white;
+    align-self: center;
+    padding:10px;
+    width: 177px;
+height: 34.49px;
+border-radius: 5px;
+font-size: 0.8em;
+text-align: center;
+margin: auto;
+}
+
+.hero{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background-color: aqua; */
+    min-width:100%;
+    min-height:30.938rem;
     animation:increaseOpacity ease-in 1.5s forwards;
+}
+
+.heroimage{
+    width:100%;
+    /* background-color:cadetblue; */
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.description{
+    display:flex;
+    /* background-color:cadetblue; */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.shoeimage-mobile{   
+    margin-top:2rem;
+    width:132px;
+    height:131px;
+    /* animation:increaseOpacity ease-in 1.5s forwards; */
 }
 
 @keyframes increaseOpacity {
@@ -90,188 +75,170 @@ input{
      }
 }
 
-.heading{
-    font-size:3.4em;
-    font-weight:800;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.mainheading{
+    margin-top:0.75rem;
+    font-weight: bold;
+    font-family:'Montserrat', sans-serif;
+    font-size:1.8em;
 }
 
-.minidesc{
-font-size: 1.8em;
+.subheading{
+    width: 15rem;
+height: 4.5rem;
+    margin-top: 0.7em;
+    text-align: center;
+    line-height: 1.5em;
+font-size: 1rem;
+font-family:'Montserrat', sans-serif;
+font-weight: 500;
 }
 
 .btn-action{
-    border-radius: 0.4rem;
-    border-width: 2px;
-    border-style: solid;
-    /* background-color: rgb(18, 16, 16); */
-    background-color: white;
-    width:10rem;
-    height:3rem;
-    font-size: larger;
-color: black;
-font-weight:bold;
-transition: background-color;
-cursor: pointer;
-}
-
-.btn-action:hover{
-    background-color:black;
+    font-size: 0.8em;
+    font-family: 'Montserrat';
+    margin-top: 0.75rem;
+    background-color: black;
     color:white;
-    border-style:none;
+    border:none;
+    border-radius: 0.5em;
+    width: 96px;
+height: 39.49px;
+left: 132px;
 }
 
-.btn-action-search{
-    display: flex;
-    align-items: center;
-    border-width:1px;
-    border-style: solid;
-    background-color:white;
-    width: 4rem;
-    height:2.8rem;
-    font-size: larger;
-    /* margin-left: 0.3rem; */
-color: white;
-font-weight:bold;
-transition: background-color;
-border-top-right-radius: 5px;
-border-bottom-right-radius: 5px;
-}
-
-.btn-action-search:hover{
-background-color:#c0bebe;
-cursor: pointer;
-
-}
-
-.carticon{
-    cursor: pointer;
+.categories{
+    /* display:flex; */
+    width:100%;
+    margin-top:3rem;
 }
 
 
-.cartdiv{
-    /* background-color: aqua; */
-    display: flex;
-    
-    align-items: center;
-    justify-content: center;
-    
-    gap: 2px;
+.categories-title{
+    text-align: center;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 1em;
+/* margin-top: 4.2rem; */
+
+
+color: #000000;
 }
-
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .dropdown-content {
-    display: none;
-    align-items: center;
-    position: absolute;
-    background-color:white;
-    min-width: 160px;
-    box-shadow: 0px 8px 10px 0px rgba(0,0,0,0.2);
-    padding: 12px 16px;
-    z-index: 1;
-  }
-  
-  .dropdown:hover .dropdown-content {
-    display: flex;
-  }
-
-  .dropdown-items{
-font-size: 1.4em;
-text-align: center;
-padding:10px;
-margin:5px;
-border-width:1px;
-border-style: solid;
-cursor: pointer;
-background: none;
-  }
-
-  .dropdown-items:hover{
-border:none;
-border-style: none;
-color:white;
-cursor: pointer;
-background-color: black;
-padding:12px;
-      }
-
-
-.categories-container{
-    display: flex;
-    justify-content:space-evenly;
-    /* gap: 123px; */
-    margin-top: 46px;
-    /* padding:10px; */
-    align-items: center;
-}
-
-
 .categories-items{
-    background-repeat: no-repeat;
-    width: 263px;
-    height:345px;
+    display:flex;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
     align-items: center;
-    transition:max-width,min-height 2s;
-    cursor: pointer;
-    /* box-shadow: 5px 5px; */
-    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
-    border-width: 1px;
-    border-style:solid;
-    border-radius: 10px;
+    width:100%
+}
+.item{
+    margin: 1rem;
     display: flex;
+    align-items: center;
     justify-content: center;
-    animation:showcategories ease-in 2s forwards;
+    border-radius: 0.5em;
+    /* position: absolute; */
+width: 95%;
+height: 243px;
+
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
+.item-desc{
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 2em;
+line-height: 39px;
+/* identical to box height */
 
-@keyframes showcategories {
-    0%{
-        opacity: 0%;
-        
-    }
 
-     100%{
-        opacity: 100%;
-        
-     }
+color: #000000;
 }
 
-      #casual{
-        background:url(../images/casual.svg);
-      }
-
-      .categorydesc{
-        font-size: 2.5em;
-        font-weight: bold;
-        font-family: monospace;
-      }
-
-
-      #casual:hover {
-       background-size:300px;
+#casual{
+    background: url("../images/casual.svg");
+    background-size: cover;
     background-position: center;
+    background-repeat:no-repeat;
+}
+#sports{
+    background: url("../images/sports.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat:no-repeat;
+}
+#formal{
+    background: url("../images/formal.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat:no-repeat;
+}
+
+
+@media(min-width:768px){
+
+    .hero{
+        min-height:40rem;
+    }
+.mainheading{
+        margin-top:22px;
+        font-size:3em;
     }
 
-    #sports:hover {
-        background-size:310px;
-     background-position: center;
-     }
+.subheading{
+    margin-top:1.5rem;
+    font-size: 1.5em;
+    width:44.813rem;
+    height: 1.8rem;
+}
 
-     #formal:hover {
-        background-size:310px;
-     background-position: center;
-     }
+#searchbox{
 
+    width:800px;
+}
+.categories-title{
+    font-size: 1.5em;
+    
+}
 
-      #sports{
-        background:url(../images/sports.svg);
-      }
+    .item{
+        margin: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.5em;
+        /* position: absolute; */
+    width: 25%;
+    height: 345px;
+    }
 
-      #formal{
-        background:url(../images/formal.svg);
-      }
+  .categories-items{
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .btn-action{
+        font-size: 1em;
+        font-family: 'Montserrat';
+        /* margin-top: 0.2rem; */
+        background-color: black;
+        color:white;
+        border:none;
+        border-radius: 0.5em;
+
+width: 153px;
+height: 47px;
+left: 635px;
+top: 594px;
+    }
+
+    .hamburgerlink{
+        display: none;
+    }
+
+.shoeimage-mobile{   
+    margin-top:69px;
+    width:235px;
+    height:235px;
+}
+}
