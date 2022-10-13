@@ -8,17 +8,6 @@
     <title>Admin</title>
     <link rel="stylesheet" href="../css/admin.css?v=<?php echo time();?>" />
     <script src="../js/adminDashboard.js"></script>
-    <script>
-    // function menuShow() {
-    //     let isHidden = document.getElementById("menu-container");
-    //     if (isHidden.style.display == "none") {
-    //         isHidden.style.display = "flex";
-
-    //     } else {
-    //         isHidden.style.display = "none";
-    //     }
-    // }
-    // </script>
 </head>
 
 <body>
@@ -56,7 +45,7 @@
             <div id="cards-container">
 
                 <div class="card">
-                    <img src="../images/orders.svg" style="width:43px; background:none;">
+                    <img src="../images/admin-orders.svg" style="width:43px; background:none;">
                     <p class="card-title">Total orders</p>
                     <p class="card-count">158</p>
                 </div>
@@ -66,7 +55,7 @@
                     <p class="card-count">148</p>
                 </div>
                 <div class="card">
-                    <img src="../images/products.svg" style="width:43px; background:none">
+                    <img src="../images/admin-products.svg" style="width:43px; background:none">
                     <p class="card-title">Total products</p>
                     <p class="card-count">148</p>
                 </div>
