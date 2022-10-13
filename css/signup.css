@@ -1,0 +1,307 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&display=swap");
+* {
+  margin: 0%;
+  padding: 0%;
+  font-family: "Montserrat";
+  box-sizing: border-box;
+  background-color: #f1f0f0;
+}
+.container {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 15%;
+  justify-content: center;
+  max-width: 662px;
+  flex-direction: column;
+}
+
+.form-container {
+  background-color: white;
+  display: flex;
+  margin-top: 3rem;
+  border-radius: 10px;
+  flex-direction: column;
+  width: 100%;
+  max-width: 630px;
+  align-items: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.signup-title {
+  font-size: 1.2em;
+  font-weight: 500;
+  line-height: 1.5em;
+  font-style: normal;
+  text-transform: uppercase;
+  margin-top: 1.5rem;
+  background: none;
+}
+
+.signup-form {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem;
+}
+
+.input-labels {
+  font-size: 0.8em;
+  padding-bottom: 6px;
+  background-color: white;
+  font-weight: 500;
+}
+
+#fullname-input {
+  background-color: white;
+  height: 41px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #615c5c;
+  padding-left: 10px;
+  padding-right: 25px;
+  margin: 0 auto;
+  font-size: 0.8em;
+  font-weight: 300;
+}
+
+#email-input {
+  background-color: white;
+  height: 41px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #615c5c;
+  padding-left: 10px;
+  padding-right: 25px;
+  margin: 0 auto;
+  font-size: 0.8em;
+  font-weight: 300;
+}
+
+.form-inputs::placeholder {
+  font-weight: 500;
+  font-size: 12px;
+  color: #a8a7a7;
+}
+
+.inputs-div {
+  background-color: white;
+  margin: 0 auto;
+  padding: 6px 0px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+#password-field {
+  background-color: white;
+  display: flex;
+  height: 41px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #615c5c;
+  padding-left: 10px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.required-field {
+  color: red;
+  font-size: 0.8em;
+  display: none;
+  background: none;
+}
+
+#btn-eye {
+  display: none;
+  border: none;
+  background: none;
+  padding: 8px;
+  border-radius: 60%;
+  align-self: stretch;
+  font-size: 0.8em;
+  cursor: pointer;
+}
+
+#password-input {
+  display: flex;
+  flex: 1;
+  height: 100%;
+  background-color: white;
+  border: none;
+  font-size: 0.8em;
+  font-weight: 300;
+}
+
+.btn-signup {
+  width: 95%;
+  align-self: center;
+  outline: none;
+  height: 2.2rem;
+  border-radius: 5px;
+  background-color: black;
+  border: none;
+  color: white;
+  font-size: 1em;
+  font-weight: 700;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.signup-status {
+  font-weight: bold;
+  align-self: center;
+  padding-top: 5px;
+  display: none;
+  background: none;
+  font-size: 0.8em;
+}
+
+.action-container {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  padding: 0rem 3.8rem 1rem 3.8rem;
+  background: none;
+  color: #7b7878;
+}
+
+.action-txt {
+  background: none;
+
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+
+  color: #000000;
+}
+
+input:focus {
+  outline: none;
+}
+
+@media (min-width: 768px) {
+  .mainlogo {
+    width: 200px;
+  }
+  .container {
+    margin-top: 7%;
+    justify-content: center;
+    max-width: 550px;
+  }
+
+  .form-container {
+    margin-top: 4rem;
+    width: 100%;
+    max-width: 632px;
+  }
+
+  .signup-title {
+    font-size: 1.563em;
+  }
+
+  .signup-form {
+    padding: 1.625rem;
+  }
+
+  .input-labels {
+    font-size: 1.125em;
+    padding-bottom: 7px;
+    background-color: white;
+  }
+
+  #fullname-input {
+    height: 3.125rem;
+    font-size: 1.1em;
+  }
+
+  #email-input {
+    height: 3.125rem;
+    font-size: 1.1em;
+  }
+
+  .form-inputs::placeholder {
+    font-size: 1em;
+  }
+
+  .inputs-div {
+    background-color: white;
+    margin: 0 auto;
+    padding: 6px 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  #password-field {
+    background-color: white;
+    display: flex;
+    height: 3.125rem;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #615c5c;
+    padding-left: 10px;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  #btn-eye {
+    border: none;
+    background: none;
+    background: none;
+    margin-top: 5px;
+    border-radius: 50%;
+    align-self: stretch;
+    font-size: 0.9em;
+    overflow: hidden;
+  }
+
+  #password-input {
+    display: flex;
+    flex: 1;
+    height: 100%;
+    background-color: white;
+    border: none;
+    font-size: 1.1em;
+    font-weight: 600;
+  }
+
+  .required-field {
+    color: red;
+    font-size: 1.1em;
+    display: none;
+    background: none;
+  }
+
+  .btn-signup {
+    height: 2.625rem;
+    font-size: 1.125em;
+    margin-top: 1rem;
+  }
+  .signup-status {
+    font-size: 1em;
+    padding:1rem;
+  }
+  .forgot-txt {
+    font-size: 1.125em;
+    margin-top: 2rem;
+  }
+
+  .action-container {
+    font-size: 1.125em;
+    padding: 0rem 3.8rem 2.25rem 3.8rem;
+  }
+
+  .action-txt {
+    background: none;
+
+    font-weight: 700;
+    font-size: 1.125em;
+    text-decoration: none;
+
+    color: #000000;
+  }
+}
