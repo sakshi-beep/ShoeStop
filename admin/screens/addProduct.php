@@ -16,7 +16,11 @@
         </ul>
 
     </nav>
+    <div class="maincontainer" style="display:flex">
     <?php require '../files/adminSideBar.php';
     ?>
+    <div></div>
+    </div>
+
 </body>
 </html>
