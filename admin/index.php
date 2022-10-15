@@ -9,18 +9,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
     <link rel="stylesheet" href="./css/admin.css?v=<?php echo time();?>" />
+    <link rel="stylesheet" href="./css/adminSideBar.css?v=<?php echo time();?>" />
+    <link rel="stylesheet" href="./css/adminNav.css?v=<?php echo time();?>">
+
     <script src="./js/navbarHamburger.js"></script>
 </head>
 
 <body>
-    <nav>
-        <ul class="nav-link">
-            <li><a href="#" onclick="menuShow()"><img src="/shoestop/images/hamburger.svg"></a></li>
-            <!-- <li>Dashboard</li> -->
-        </ul>
-
-    </nav>
-    <div class="maincontainer" style="display:flex; flexwrap:wrap">
+<?php require './files/adminNav.php'?>
+    <div class="maincontainer" style="display:flex;">
         <?php
     require './files/adminSideBar.php';
     ?>
