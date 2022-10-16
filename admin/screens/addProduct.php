@@ -12,10 +12,10 @@
 </head>
 
 <body>
-    <?php require '../files/adminNav.php'?>
+    <?php require '../includes/adminNav.php'?>
 
     <div class="maincontainer">
-        <?php require '../files/adminSideBar.php'?>
+        <?php require '../includes/adminSideBar.php'?>
         <div id="products-container">
             <label class="container-title">Add Products</label>
             <div id="add-products">
