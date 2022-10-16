@@ -10,68 +10,137 @@
   font-family: "Montserrat";
 }
 
-
-
-.maincontainer{
-  display:flex;
+.maincontainer {
+  display: flex;
 }
 
-#products-container{
-  padding:0rem 1rem;
-  
+#products-container {
+  padding: 0rem 1rem;
+
   display: flex;
-  width:100%;
-  gap:1.5rem;
+  width: 100%;
+  gap: 1.5rem;
   flex-direction: column;
   margin-top: 1.2rem;
-  /* background-color: white; */
 }
 
-  .container-title {
-    font-weight: 600;
-    font-size: 1.3em;
-    color: #000000;
-    align-self: center;
-  }
-
-#add-products{
-display:flex;
-justify-content: center;
-/* background-color: red; */
-width:100%
+.container-title {
+  font-weight: 600;
+  font-size: 1.3em;
+  color: #000000;
+  align-self: center;
 }
 
-  .add-products-form{
-    /* background-color: red; */
-width:85%
-  }
+#add-products {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+}
 
-  .input-container {
-    background-color: white;
-    margin: 0 auto;
-    padding: 6px 0px;
-    max-width: 60%;
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-  }
+.add-products-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap:1rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.input-container {
+  background-color: white;
+  margin: 0 auto;
+  padding: 6px 0px;
+  width: 100%;
+  /* min-width: 320px; */
+  display: flex;
+  flex-direction: column;
+}
+
+.input-labels {
+  font-size: 0.8em;
+  padding-bottom: 6px;
+  background-color: white;
+  font-weight: 500;
+}
+
+.form-inputs{
+  background-color: white;
+  height: 41px;
+  width:100%;
+  border-radius: 5px;
+  border: 1px solid #615c5c;
+  padding-left: 10px;
+  padding-right: 25px;
+  font-size: 0.8em;
+  font-weight: 300;
+}
+
+#name-input {
+  background-color: white;
+  height: 41px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #615c5c;
+  padding-left: 10px;
+  padding-right: 25px;
+  margin: 0 auto;
+  font-size: 0.8em;
+  font-weight: 300;
+}
+.category-select{
+  display:flex;
+  background-color: white;
+  justify-content: space-between;
+  width:100%;
   
+}
 
-  .input-labels {
-    font-size: 0.8em;
-    padding-bottom: 6px;
-    background-color: white;
-    font-weight: 500;
-  }
-  #name-input{
-    background-color: white;
-    height: 41px;
-    width: 100%;
-    border-radius: 5px;
-    border: 1px solid #615c5c;
-    padding-left: 10px;
-    padding-right: 25px;
-    margin: 0 auto;
-    font-size: 0.8em;
-    font-weight: 300;
-  }
+.two-input-container{
+display: flex;
+width:45%;
+flex-direction: column;
+justify-content: center;
+}
+
+
+select{
+  background-color:white;
+  color: black;
+  border: 1px solid #615c5c;
+  border-radius: 5px;
+  padding:0.65rem 1.5rem;
+  font-size: 0.8em;
+  width:100%
+}
+
+option{
+  background-color: white;
+  color: black;
+  font-size: 0.8rem;
+}
+
+
+
+/* #size-input {
+  background-color: white;
+  height: 41px;
+  width:100%;
+  border-radius: 5px;
+  border: 1px solid #615c5c;
+  padding-left: 10px;
+  padding-right: 25px;
+  font-size: 0.8em;
+  font-weight: 300;
+}
+
+#price-input{
+  background-color: white;
+  height: 41px;
+  width:100%;
+  border-radius: 5px;
+  border: 1px solid #615c5c;
+  padding-left: 10px;
+  padding-right: 25px;
+  font-size: 0.8em;
+  font-weight: 300;
+} */
