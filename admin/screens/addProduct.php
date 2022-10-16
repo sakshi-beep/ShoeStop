@@ -14,7 +14,7 @@
 
 const getPhotoUrl = () =>{
     let url = document.getElementById("photo-input").value;
-    while(url.length<1){
+    if(url.length<1){
         document.getElementById("img-div").style.display="none";
     };
     document.getElementById("photo").src=`${url}`;
@@ -30,7 +30,7 @@ const getPhotoUrl = () =>{
         <div id="products-container">
             <label class="container-title">Add Products</label>
             <div id="add-products">
-                <form class="add-products-form">
+                <form class="add-products-form" action="../helpers/handleAddProduct.php" method="POST">
                     <div class="input-container">
                         <label class="input-labels">Name</label>
                         <input type="text" placeholder="enter product name" name="product-name" class="form-inputs" id="name-input">
@@ -87,6 +87,8 @@ const getPhotoUrl = () =>{
 <div id="img-div" style="height:150px; width:90%;">
     <img src="" id="photo" style="height:100%; width:100%; object-fit:contain; display:none">
 </div>
+
+<input type="submit">
                 </form>
             </div>
         </div>
