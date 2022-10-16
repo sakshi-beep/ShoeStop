@@ -1,5 +1,5 @@
 <?php
-include '../files/dbconfig.php';
+include '../includes/dbconfig.php';
 
 extract($_POST);
     $email = $_POST['email'];

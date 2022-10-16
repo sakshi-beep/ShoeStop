@@ -44,7 +44,7 @@
   }
   
   #admin-txt {
-    font-size: 1.2em;
+    font-size: 1.4rem;
     font-weight: 510;
   }
   
@@ -63,7 +63,7 @@
     gap: 2rem;
     margin: 5px 0px;
     cursor: pointer;
-    padding: 10px 0px;
+    padding: 1em 0em;
   }
   
   .ul-list:hover{
@@ -82,7 +82,7 @@
   }
 
   .li-text {
-    font-size: 1.2em;
+    font-size: 1.4rem;
     font-weight: 500;
   }
   

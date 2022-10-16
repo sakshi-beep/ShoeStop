@@ -16,10 +16,10 @@
 </head>
 
 <body>
-<?php require './files/adminNav.php'?>
+<?php require './includes/adminNav.php'?>
     <div class="maincontainer" style="display:flex;">
         <?php
-    require './files/adminSideBar.php';
+    require './includes/adminSideBar.php';
     ?>
         <?php
     require './screens/dashboard.php';

@@ -9,3 +9,69 @@
   background-color: #f1f0f0;
   font-family: "Montserrat";
 }
+
+
+
+.maincontainer{
+  display:flex;
+}
+
+#products-container{
+  padding:0rem 1rem;
+  
+  display: flex;
+  width:100%;
+  gap:1.5rem;
+  flex-direction: column;
+  margin-top: 1.2rem;
+  /* background-color: white; */
+}
+
+  .container-title {
+    font-weight: 600;
+    font-size: 1.3em;
+    color: #000000;
+    align-self: center;
+  }
+
+#add-products{
+display:flex;
+justify-content: center;
+/* background-color: red; */
+width:100%
+}
+
+  .add-products-form{
+    /* background-color: red; */
+width:85%
+  }
+
+  .input-container {
+    background-color: white;
+    margin: 0 auto;
+    padding: 6px 0px;
+    max-width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  
+
+  .input-labels {
+    font-size: 0.8em;
+    padding-bottom: 6px;
+    background-color: white;
+    font-weight: 500;
+  }
+  #name-input{
+    background-color: white;
+    height: 41px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #615c5c;
+    padding-left: 10px;
+    padding-right: 25px;
+    margin: 0 auto;
+    font-size: 0.8em;
+    font-weight: 300;
+  }

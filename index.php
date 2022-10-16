@@ -17,7 +17,7 @@
 
 <body>
     <?php
-    require './files/nav.php';
+    require './includes/nav.php';
     ?>
     <main class="hero">
         <div class="heroimage">
