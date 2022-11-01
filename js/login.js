@@ -1,4 +1,5 @@
-const userLogin=()=> {
+function userLogin(){
+  console.log("thsi");
   event.preventDefault();
   let email = jQuery("#email-input").val();
   let password = jQuery("#password-input").val();

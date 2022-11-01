@@ -11,9 +11,9 @@ $fullname = $_SESSION['fullname'];
         <img src="./images/hamburger.svg">
     </button>
     <div class="navbar-collapse collapse" id="navbar">
-        <form class="form-group-lg d-flex mx-auto p-2">
+        <form class="form-group-lg d-flex mx-auto p-2" >
             <input class="form-control input-lg" type="search" placeholder="Search in the store"
-                aria-label="Search for products" id="search-input" />
+                aria-label="Search for products" id="search-input"/>
 
             <button style="background:none; border:none;margin-left:10px; border-radius:10px"><img
                     src="./images/search-icon.svg"></button>

@@ -112,7 +112,8 @@
 
   @media (min-width: 768px) {
     #menu-container {
-      position: relative;
+      position: sticky;
+      top:55px;
       display: flex;
       max-width: 400px;
       height: 93.5vh;

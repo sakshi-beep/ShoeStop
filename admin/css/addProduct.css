@@ -10,68 +10,300 @@
   font-family: "Montserrat";
 }
 
-
-
-.maincontainer{
-  display:flex;
+.main-container {
+  display: flex;
 }
 
-#products-container{
-  padding:0rem 1rem;
-  
+#products-form-container {
+  padding: 0rem 1rem;
+align-items: center;
   display: flex;
-  width:100%;
-  gap:1.5rem;
+  width: 100%;
+  gap: 1.5rem;
   flex-direction: column;
   margin-top: 1.2rem;
-  /* background-color: white; */
 }
 
-  .container-title {
-    font-weight: 600;
-    font-size: 1.3em;
-    color: #000000;
-    align-self: center;
-  }
+.container-title {
+  font-weight: 600;
+  font-size: 1.3em;
+  color: #000000;
+  align-self: center;
+}
+
+#add-products {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  /* align-self:center; */
+  max-width:500px;
+  align-items: center;
+  background-color: white;
+  padding:1rem 1rem;
+  border-radius: 10px;
+}
+
+.add-products-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap:1rem;
+  justify-content: center;
+  width: 100%;
+  flex-direction:column;
+  background-color:inherit;
+}
+
+.input-container {
+  background-color: white;
+  padding: 6px 0px;
+  flex:1;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.input-labels {
+  font-size: 0.8em;
+  padding-bottom: 6px;
+  background-color: white;
+  font-weight: 500;
+}
+
+.form-inputs{
+  background-color: white;
+  height: 41px;
+  width:100%;
+  border-radius: 5px;
+  border: 1px solid #615c5c;
+  padding-left: 10px;
+  padding-right: 25px;
+  font-size: 0.8em;
+  font-weight: 300;
+}
+
+#name-input {
+  background-color: white;
+  height: 41px;
+  border-radius: 5px;
+  border: 1px solid #615c5c;
+  padding-left: 10px;
+  padding-right: 25px;
+  font-size: 0.8em;
+  font-weight: 300;
+}
+.category-select{
+  display:flex;
+  background-color: white;
+  justify-content: space-between;
+  width:100%;
+  flex-direction:column;
+  gap:1rem;
+  
+}
+
+.two-input-container{
+display: flex;
+flex:1;
+flex-direction: column;
+justify-content: center;
+}
+
+
+select{
+  background-color:white;
+  color: black;
+  border: 1px solid #615c5c;
+  border-radius: 5px;
+  padding:0.65rem 0.8rem;
+  font-size: 0.8em;
+  width:100%
+}
+
+option{
+  background-color: white;
+  color: black;
+  font-size: 0.8rem;
+}
+
+#btn-submit{
+  font-size: 0.8rem;
+  color:rgb(255, 255, 255);
+  font-weight:500;
+  text-decoration: none;
+  border:none;
+  background-color: rgb(0, 0, 0);
+  padding:1.1em 1.1em;
+  border-radius: 5px;
+  cursor:pointer;
+  width:95%;
+align-self:center;
+}
+
+.allproducts-container{
+  display:flex;
+  justify-content: space-around;
+  gap:15px;
+  flex-direction: row;
+}
+
+
+.product-card{
+  display:flex;
+  flex-direction:column;
+  gap:9px;
+  align-items: center;
+  width: 305px;
+  min-height: max-content;
+padding:14px 14px;
+background-color:white;
+}
+
+.product-card:hover{
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-div{
+  width:100%;
+  background-color: white;
+}
+
+.image{
+  width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.product-details{
+  display:flex;
+  flex-direction: column;
+  flex:1;
+  width:100%;
+  gap:4px;
+  background-color:white;
+}
+
+.product-desc{
+  display:flex;
+  width:100%;
+  flex:1;
+  background-color:white;
+justify-content:flex-start;
+gap:10px;
+}
+
+.card-values{
+  background-color: white;
+  font-size: 1rem;
+  font-weight:600;
+}
+
+.card-buttons{
+  display:flex;
+  gap:10px;
+background-color: white;
+  width:100%;
+  flex-direction: column;
+}
+
+.values{
+  background-color: white;
+  font-weight:400;
+  font-size: 1rem;
+  color:#342C2C;
+}
+
+.product-button{
+padding:10px;
+border-radius: 5px;
+background-color: white;
+display:flex;
+align-items: center;
+text-decoration: none;
+justify-content: center;
+font-size:1rem;
+font-weight: 600;
+}
+
+#update-button{
+  border: solid 1px black;
+  color:black;
+}
+
+#update-button:hover{
+  background-color: black;
+  color:white;
+}
+
+#delete-button{
+  border:solid 1px #CE2020;
+  color:#CE2020;
+}
+
+#delete-button:hover{
+  background-color: #CE2020;
+  color:white;
+}
+
+@media(min-width:768px){
 
 #add-products{
-display:flex;
-justify-content: center;
-/* background-color: red; */
-width:100%
+  align-self: center;
+  max-width:600px;
+  padding:1.3rem 1.5rem;
 }
 
-  .add-products-form{
-    /* background-color: red; */
-width:85%
-  }
+.add-products-form {
+  max-width:40rem;
+  gap:1rem;
+}
 
-  .input-container {
-    background-color: white;
-    margin: 0 auto;
-    padding: 6px 0px;
-    max-width: 60%;
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-  }
+
+.input-labels {
+  font-size: 1.2em;
+}
+
+.form-inputs{
+  height: 45px;
+  font-size: 1em;
+}
+
+#name-input {
+  height: 45px;
+  font-size: 1em;
+}
+.category-select{
+  display:flex;
+  background-color: white;
+  justify-content: space-between;
+  flex-direction:column;
+  gap:1rem;
   
+}
 
-  .input-labels {
-    font-size: 0.8em;
-    padding-bottom: 6px;
-    background-color: white;
-    font-weight: 500;
-  }
-  #name-input{
-    background-color: white;
-    height: 41px;
-    width: 100%;
-    border-radius: 5px;
-    border: 1px solid #615c5c;
-    padding-left: 10px;
-    padding-right: 25px;
-    margin: 0 auto;
-    font-size: 0.8em;
-    font-weight: 300;
-  }
+.two-input-container{
+display: flex;
+flex:1;
+flex-direction: column;
+justify-content: center;
+}
+
+
+select{
+  font-size: 1em;
+  height:45px
+}
+
+option{
+  background-color: white;
+  color: black;
+  font-size: 0.8rem;
+}
+
+#btn-submit{
+  align-self:center;
+  font-size: 1rem;
+  padding:0.8em 0.6em;
+  width:90%
+}
+
+}
