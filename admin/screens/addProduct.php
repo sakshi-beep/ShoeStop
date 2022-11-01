@@ -25,9 +25,9 @@ const getPhotoUrl = () => {
 <body>
     <?php require '../includes/adminNav.php'?>
 
-    <div class="maincontainer">
+    <div class="main-container">
         <?php require '../includes/adminSideBar.php'?>
-        <div id="products-container">
+        <div id="products-form-container">
             <label class="container-title">Add Products</label>
             <div id="add-products">
                 <form class="add-products-form" action="../helpers/handleAddProduct.php" method="POST">
@@ -95,6 +95,13 @@ const getPhotoUrl = () => {
 
                     <button onclick="event.preventDefault()" id="btn-submit">Add Product</button>
                 </form>
+            </div>
+            <div class="products-container">
+                <label class="container-title">Products</label>
+                <div class="allproducts-container"></div>
+                <?php 
+                
+                ?>
             </div>
         </div>
     </div>

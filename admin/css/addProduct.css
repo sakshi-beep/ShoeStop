@@ -10,13 +10,13 @@
   font-family: "Montserrat";
 }
 
-.maincontainer {
+.main-container {
   display: flex;
 }
 
-#products-container {
+#products-form-container {
   padding: 0rem 1rem;
-
+align-items: center;
   display: flex;
   width: 100%;
   gap: 1.5rem;
@@ -35,7 +35,7 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  align-self:center;
+  /* align-self:center; */
   max-width:500px;
   align-items: center;
   background-color: white;
