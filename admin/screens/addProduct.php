@@ -1,10 +1,3 @@
-<?php
-include '../../includes/dbconfig.php';
-
-$allProducts = mysqli_query($connect, "SELECT * from Shoes");
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,9 +8,25 @@ $allProducts = mysqli_query($connect, "SELECT * from Shoes");
     <link rel="stylesheet" href="../css/addProduct.css?v=<?php echo time();?>">
     <link rel="stylesheet" href="../css/adminSideBar.css?v=<?php echo time();?>">
     <script src="../js/navbarHamburger.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <title>Products</title>
 </head>
 <script>
+const deleteFunction = (sID) => {
+    event.preventDefault();
+    alert(sID);
+    $.post(
+        "../helpers/deleteProduct.php", {
+            id: sID
+        },
+        result => {
+            result == 'Product Deleted' ? $(".products-container").load(location.href +
+                ".products-container") : alert(result);
+        }
+    )
+}
+
+
 const getPhotoUrl = () => {
     let url = document.getElementById("photo-input").value;
     if (url.length > 1) {
@@ -106,23 +115,7 @@ const getPhotoUrl = () => {
             <div class="products-container">
                 <label class="container-title">Products</label>
                 <div class="allproducts-container">
-                <?php 
-                foreach($allProducts as $values){
-                    echo '<div class="product-card">
-                    <div class="image-div"><img src='.$values['s-photo'].' class="image"></div>
-                    <div class="product-details">
-                    <div class="product-desc" id="product-name"><p class="card-values">Product:</p><p class="values">'.$values['s-name'].'</p></div>
-                    <div class="product-desc" id="product-size"><p class="card-values">Size:</p><p class="values">'.$values['s-size'].'</p></div>
-                    <div class="product-desc" id="product-category"><p class="card-values">Category:</p><p class="values">'.$values['s-category'].'</p></div>
-                    <div class="product-desc" id="product-price"><p class="card-values">Price:</p><p class="values">'.$values['s-price'].'</p></div>
-                    </div>
-                    <div class="card-buttons">
-                    <a class="product-button" id="update-button" href="#">Update</a>
-                    <a class="product-button" id="delete-button" href="#">Delete</a>
-                    </div>
-                    </div>';
-                }
-                ?>
+                    <?php include '../includes/allProducts.php';?>
                 </div>
             </div>
         </div>
