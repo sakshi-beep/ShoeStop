@@ -20,8 +20,7 @@ const deleteFunction = (sID) => {
             id: sID
         },
         result => {
-            result == 'Product Deleted' ? $(".products-container").load(location.href +
-                ".products-container") : alert(result);
+            $(".allproducts-container").load("addProduct.php .allproducts-container");
         }
     )
 }
@@ -109,7 +108,7 @@ const getPhotoUrl = () => {
                             style="height:100%; width:100%; object-fit:contain; display:none; background-color:white">
                     </div>
 
-                    <button onclick="event.preventDefault()" id="btn-submit">Add Product</button>
+                    <button id="btn-submit" onclick="addProduct()">Add Product</button>
                 </form>
             </div>
             <div class="products-container">
