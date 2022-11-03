@@ -12,7 +12,7 @@
     <title>Products</title>
 </head>
 <script>
-const deleteFunction = (sID) => {
+const deleteProduct = (sID) => {
     event.preventDefault();
     alert(sID);
     $.post(
@@ -21,6 +21,7 @@ const deleteFunction = (sID) => {
         },
         result => {
             $(".allproducts-container").load("addProduct.php .allproducts-container");
+            $(".add-products").load("addProduct.php .add-products");
         }
     )
 }
