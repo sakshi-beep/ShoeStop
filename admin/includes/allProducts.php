@@ -13,8 +13,8 @@ foreach($allProducts as $values){
                     <div class="product-desc" id="product-price"><p class="card-values">Price:</p><p class="values">'.$values['s-price'].'</p></div>
                     </div>
                     <div class="card-buttons">
-                    <a class="product-button" id="update-button" onclick="deleteProduct('.$values['s-id'].')">Update</a>
-                    <a class="product-button" id="delete-button" href="#">Delete</a>
+                    <a class="product-button" id="update-button" >Update</a>
+                    <a class="product-button" id="delete-button" onclick="deleteProduct('.$values['s-id'].')" href="#">Delete</a>
                     </div>
                     </div>';
                 }
