@@ -162,7 +162,7 @@ align-self:center;
 
 .allproducts-container{
   display:flex;
-  justify-content: center;
+  justify-content:center;
   gap:15px;
   flex-wrap:wrap;
   /* background-color: blue; */
@@ -171,6 +171,7 @@ align-self:center;
 }
 #this{
   position:sticky;
+  background: none;
   top:10px;
   z-index:1
 }
@@ -178,11 +179,11 @@ align-self:center;
 .product-card{
   display:flex;
   flex-direction:column;
-  gap:9px;
+  margin:3px 3px;
   border-radius: 5px;
   align-items: center;
   width: 305px;
-  min-height: max-content;
+  min-height:430px;
 padding:0px 14px;
 padding-bottom: 16px;
 background-color:white;
@@ -210,6 +211,7 @@ object-fit: cover;
   display:flex;
   flex-direction: column;
   flex:1;
+  margin-top: 5px;
   width:100%;
   gap:4px;
   background-color:white;
@@ -233,6 +235,7 @@ gap:10px;
 .card-buttons{
   display:flex;
   gap:10px;
+  margin-top: 5px;
 background-color: white;
   width:100%;
   flex-direction: column;
@@ -250,6 +253,7 @@ padding:10px;
 border-radius: 5px;
 background-color: white;
 display:flex;
+margin:1px 0px;
 align-items: center;
 text-decoration: none;
 justify-content: center;
