@@ -28,7 +28,7 @@ const addProduct= () =>{
     
     $.post("../helpers/handleAddProduct.php", obj, result=>{
         $(".allproducts-container").load("addProduct.php .allproducts-container");
-        // $(".add-products-form").load("addProduct.php .add-products-form");
+        alert(result);
 
     })
     $("form")[0].reset();
@@ -36,7 +36,6 @@ const addProduct= () =>{
 
 const deleteProduct = (sID) => {
     event.preventDefault();
-    alert(sID);
     $.post(
         "../helpers/deleteProduct.php", {
             id: sID
@@ -126,9 +125,8 @@ const getPhotoUrl = () => {
                                 id="photo-input" onblur="getPhotoUrl()">
                         </div>
                     </div>
-                    <div id="img-div" style="height:350px; width:90%; display:none; background-color:white">
-                        <img src="" id="photo"
-                            style="height:100%; width:100%; object-fit:contain; display:none; background-color:white">
+                    <div id="img-div">
+                        <img src="" id="photo">
                     </div>
 
                     <button id="btn-submit" onclick="addProduct()">Add Product</button>

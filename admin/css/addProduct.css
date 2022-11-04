@@ -35,7 +35,6 @@ align-items: center;
   display: flex;
   justify-content: center;
   width: 100%;
-  /* align-self:center; */
   max-width:500px;
   align-items: center;
   background-color: white;
@@ -125,7 +124,22 @@ option{
   font-size: 0.8rem;
 }
 
+#img-div{
+  max-height:200px;
+  background:blue;
+  display:none;
+  width:100%;
+}
+
+#photo{
+  width:100%;
+  object-fit:contain;
+  background: white;
+  display:none;
+}
+
 #btn-submit{
+  margin-top: 1rem;
   font-size: 0.8rem;
   color:rgb(255, 255, 255);
   font-weight:500;
@@ -155,16 +169,22 @@ align-self:center;
   width:100%;
   flex-direction: row;
 }
-
+#this{
+  position:sticky;
+  top:10px;
+  z-index:1
+}
 
 .product-card{
   display:flex;
   flex-direction:column;
   gap:9px;
+  border-radius: 5px;
   align-items: center;
   width: 305px;
   min-height: max-content;
-padding:14px 14px;
+padding:0px 14px;
+padding-bottom: 16px;
 background-color:white;
 }
 
@@ -173,14 +193,16 @@ background-color:white;
 }
 
 .image-div{
-  width:100%;
+  align-self: center;
+  width:inherit; 
   max-height:200px;
   background-color: white;
 }
 
 .image{
-  width: 100%;
+width: 100%;
 height: 100%;
+background: white;
 object-fit: cover;
 }
 
@@ -260,7 +282,7 @@ font-weight: 600;
 #add-products{
   align-self: center;
   max-width:600px;
-  padding:1.3rem 1.5rem;
+  padding:1.4rem 1.5rem;
 }
 
 .add-products-form {

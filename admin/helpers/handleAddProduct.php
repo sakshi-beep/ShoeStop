@@ -2,7 +2,6 @@
 include '../../includes/dbconfig.php';
 
 extract($_POST);
-
 if(isset($_POST)){
     $name = $_POST['product-name'];
 $category = $_POST['product-category'];
