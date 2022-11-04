@@ -12,6 +12,28 @@
     <title>Products</title>
 </head>
 <script>
+const addProduct= () =>{
+    event.preventDefault();
+    const formValues = $("form").serializeArray();
+    const obj = {
+            [formValues[0].name]: formValues[0].value, 
+            [formValues[1].name]: formValues[1].value,
+            [formValues[2].name]: formValues[2].value,
+            [formValues[3].name]: formValues[3].value,
+            [formValues[4].name]: formValues[4].value,
+            [formValues[5].name]: formValues[5].value,
+            [formValues[6].name]: formValues[6].value,
+        }
+
+    
+    $.post("../helpers/handleAddProduct.php", obj, result=>{
+        $(".allproducts-container").load("addProduct.php .allproducts-container");
+        // $(".add-products-form").load("addProduct.php .add-products-form");
+
+    })
+    $("form")[0].reset();
+}
+
 const deleteProduct = (sID) => {
     event.preventDefault();
     alert(sID);
@@ -44,9 +66,9 @@ const getPhotoUrl = () => {
     <div class="main-container">
         <?php require '../includes/adminSideBar.php'?>
         <div id="products-form-container">
-            <label class="container-title">Add Products</label>
+            <label class="container-title" id="that">Add Products</label>
             <div id="add-products">
-                <form class="add-products-form" action="../helpers/handleAddProduct.php" method="POST">
+                <form class="add-products-form" method="POST">
                     <div class="input-container">
                         <label class="input-labels">Name</label>
                         <input type="text" placeholder="enter product name" name="product-name" class="form-inputs"
@@ -113,7 +135,7 @@ const getPhotoUrl = () => {
                 </form>
             </div>
             <div class="products-container">
-                <label class="container-title">Products</label>
+                <label class="container-title" id="this">Products</label>
                 <div class="allproducts-container">
                     <?php include '../includes/allProducts.php';?>
                 </div>
