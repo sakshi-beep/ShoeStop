@@ -12,6 +12,8 @@
 
 .main-container {
   display: flex;
+  position: relative;
+  /* justify-content: center; */
 }
 
 #products-form-container {
@@ -19,6 +21,7 @@
 align-items: center;
   display: flex;
   width: 100%;
+  height:max-content;
   gap: 1.5rem;
   flex-direction: column;
   margin-top: 1.2rem;
@@ -42,6 +45,37 @@ align-items: center;
   border-radius: 10px;
 }
 
+#update-title{
+  position: sticky;
+  top:20px;
+  background: none;
+  z-index: 1;
+}
+
+.updateform-container{
+  padding: 0rem 1rem;
+    align-items: center;
+    display:none;
+    justify-content: center;
+    width: 100%;
+    height: max-content;
+    gap: 1.5rem;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+#update-products{
+  display: flex;
+  flex-direction: column;
+  align-self:center;
+  justify-content: center;
+  width: 100%;
+  max-width:500px;
+  align-items: center;
+  background-color: white;
+  padding:1rem 1rem;
+  border-radius: 10px;
+}
 .add-products-form {
   display: flex;
   flex-wrap: wrap;
@@ -276,6 +310,25 @@ font-weight: 600;
   color:#CE2020;
 }
 
+#cancel-button{
+  align-self:center;
+  width:95%;
+  border-radius: 5px;
+  background:none;
+  border:solid 1px #CE2020;
+  color:#CE2020;
+  font-weight: 500;
+  font-size: 0.8rem;
+  text-decoration: none;
+  padding:0.9em 0.9em;
+  cursor:pointer;
+}
+
+#cancel-button:hover{
+  background-color: #CE2020;
+  color:white; 
+}
+
 #delete-button:hover{
   background-color: #CE2020;
   color:white;
@@ -342,5 +395,10 @@ option{
   padding:0.8em 0.6em;
   width:90%
 }
-
+#cancel-button{
+  align-self:center;
+  font-size: 1rem;
+  padding:0.7em 0.6em;
+  width:90%
+}
 }

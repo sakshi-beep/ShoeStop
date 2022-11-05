@@ -7,57 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/addProduct.css?v=<?php echo time();?>">
     <link rel="stylesheet" href="../css/adminSideBar.css?v=<?php echo time();?>">
-    <script src="../js/navbarHamburger.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="../js/navbarHamburger.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" defer></script>
     <title>Products</title>
 </head>
-<script>
-const addProduct= () =>{
-    event.preventDefault();
-    const formValues = $("form").serializeArray();
-    const obj = {
-            [formValues[0].name]: formValues[0].value, 
-            [formValues[1].name]: formValues[1].value,
-            [formValues[2].name]: formValues[2].value,
-            [formValues[3].name]: formValues[3].value,
-            [formValues[4].name]: formValues[4].value,
-            [formValues[5].name]: formValues[5].value,
-            [formValues[6].name]: formValues[6].value,
-        }
-
-    
-    $.post("../helpers/handleAddProduct.php", obj, result=>{
-        $(".allproducts-container").load("addProduct.php .allproducts-container");
-        alert(result);
-
-    })
-    $("form")[0].reset();
-}
-
-const deleteProduct = (sID) => {
-    event.preventDefault();
-    $.post(
-        "../helpers/deleteProduct.php", {
-            id: sID
-        },
-        result => {
-            $(".allproducts-container").load("addProduct.php .allproducts-container");
-            $(".add-products").load("addProduct.php .add-products");
-        }
-    )
-}
-
-
-const getPhotoUrl = () => {
-    let url = document.getElementById("photo-input").value;
-    if (url.length > 1) {
-        document.getElementById("photo").src = `${url}`;
-        document.getElementById("img-div").style.display = "flex";
-        document.getElementById("photo").style.display = "block";
-    };
-
-}
-</script>
+<script src="../js/addProduct.js" defer></script>
 
 <body>
     <?php require '../includes/adminNav.php'?>
@@ -138,9 +92,13 @@ const getPhotoUrl = () => {
                     <?php include '../includes/allProducts.php';?>
                 </div>
             </div>
+
+        </div>
+        <div class="updateform-container">
+
+            <?php include '../includes/updateForm.php';?>
         </div>
     </div>
-
 </body>
 
 </html>
