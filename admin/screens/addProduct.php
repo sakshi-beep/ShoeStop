@@ -10,8 +10,8 @@
     <script src="../js/navbarHamburger.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" defer></script>
     <title>Products</title>
+    <script src="../js/addProduct.js?v=<?php echo time(); ?>" defer></script>
 </head>
-<script src="../js/addProduct.js" defer></script>
 
 <body>
     <?php require '../includes/adminNav.php'?>

@@ -35,7 +35,16 @@ const deleteProduct = (sID) => {
 }
 
 
-const showUpForm =()=>{
+const showUpForm =(productid)=>{
+$.post(
+    `../helpers/updateProduct.php`, 
+    {
+        id:productid
+    },
+    result=>console.log(result)
+    // $("#update-name").val(result)
+)
+
     $("#products-form-container").hide();
     $(".updateform-container").show();
 }

@@ -4,8 +4,9 @@
         <form class="add-products-form" method="POST">
             <div class="input-container">
                 <label class="input-labels">Name</label>
+                <?php echo $productName;?>
                 <input type="text" placeholder="enter product name" name="update-name" class="form-inputs"
-                    id="update-name">
+                    id="update-name" value="">
                 <span class="required-name"></span>
             </div>
             <div class="category-select">
