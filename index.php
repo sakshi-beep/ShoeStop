@@ -15,7 +15,7 @@
     <script src="./js/index.js"></script>
 </head>
 
-<body>
+<body style="overflow-x:hidden;">
     <?php
     require './includes/nav.php';
     ?>
@@ -30,23 +30,46 @@
         </div>
     </main>
 
-    <section class="categories">
+    <!-- <section class="categories"> -->
 
-        <div>
-            <h2 class="categories-title">Categories</h1>
-                <div class="categories-items">
-                    <a class="item" id="casual" href="./screens/casualScreen.php">
-                        Casual
-                    </a>
-                    <a class="item" id="sports" href="./screens/sportsScreen.php">
-                        Sports
-                    </a>
-                    <a class="item" id="formal" href="./screens/formalScreen.php">
-                        formal
-                    </a>
-                </div>
+    <div class="categories-container">
+        <h2 class="container-title">Categories</h2>
+        <div class="categories-items">
+            <a class="item" id="casual" href="./screens/casualScreen.php">
+                Casual
+            </a>
+            <a class="item" id="sports" href="./screens/sportsScreen.php">
+                Sports
+            </a>
+            <a class="item" id="formal" href="./screens/formalScreen.php">
+                Formal
+            </a>
         </div>
-    </section>
+    </div>
+    <!-- </section> -->
+    <div class="featured-container">
+        <h2 class="container-title">Featured</h2>
+        <div class="featured-products">
+        <?php
+include "./includes/dbconfig.php";
+$featuredProduct = mysqli_query($connect, "SELECT * from Shoes where isFeatured = '1'");
+
+foreach($featuredProduct as $isFeatured){
+
+    echo '<div class="featured-card">
+    <div class="image-container">
+        <img src='.$isFeatured['s_photo'].'
+            class="featured-img">
+        <div class="featured-desc">
+            <p class="featured-txt">'.$isFeatured['s_name'].'</p>
+            <p class="featured-txt">Rs.'.$isFeatured['s_price'].'</p>
+        </div>
+    </div>
+</div>';
+}
+?>
+    </div>
+    </div>
 </body>
 
 </html>

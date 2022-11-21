@@ -7,35 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/addProduct.css?v=<?php echo time();?>">
     <link rel="stylesheet" href="../css/adminSideBar.css?v=<?php echo time();?>">
-    <script src="../js/navbarHamburger.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="../js/navbarHamburger.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" defer></script>
     <title>Products</title>
+    <script src="../js/addProduct.js?v=<?php echo time(); ?>" defer></script>
 </head>
-<script>
-const deleteFunction = (sID) => {
-    event.preventDefault();
-    alert(sID);
-    $.post(
-        "../helpers/deleteProduct.php", {
-            id: sID
-        },
-        result => {
-            $(".allproducts-container").load("addProduct.php .allproducts-container");
-        }
-    )
-}
-
-
-const getPhotoUrl = () => {
-    let url = document.getElementById("photo-input").value;
-    if (url.length > 1) {
-        document.getElementById("photo").src = `${url}`;
-        document.getElementById("img-div").style.display = "flex";
-        document.getElementById("photo").style.display = "block";
-    };
-
-}
-</script>
 
 <body>
     <?php require '../includes/adminNav.php'?>
@@ -43,9 +19,9 @@ const getPhotoUrl = () => {
     <div class="main-container">
         <?php require '../includes/adminSideBar.php'?>
         <div id="products-form-container">
-            <label class="container-title">Add Products</label>
+            <label class="container-title" id="that">Add Products</label>
             <div id="add-products">
-                <form class="add-products-form" action="../helpers/handleAddProduct.php" method="POST">
+                <form class="add-products-form" method="POST">
                     <div class="input-container">
                         <label class="input-labels">Name</label>
                         <input type="text" placeholder="enter product name" name="product-name" class="form-inputs"
@@ -103,23 +79,26 @@ const getPhotoUrl = () => {
                                 id="photo-input" onblur="getPhotoUrl()">
                         </div>
                     </div>
-                    <div id="img-div" style="height:350px; width:90%; display:none; background-color:white">
-                        <img src="" id="photo"
-                            style="height:100%; width:100%; object-fit:contain; display:none; background-color:white">
+                    <div id="img-div">
+                        <img src="" id="photo">
                     </div>
 
                     <button id="btn-submit" onclick="addProduct()">Add Product</button>
                 </form>
             </div>
             <div class="products-container">
-                <label class="container-title">Products</label>
+                <label class="container-title" id="this">Products</label>
                 <div class="allproducts-container">
                     <?php include '../includes/allProducts.php';?>
                 </div>
             </div>
+
+        </div>
+        <div class="updateform-container">
+
+            <?php include '../includes/updateForm.php';?>
         </div>
     </div>
-
 </body>
 
 </html>

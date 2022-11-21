@@ -4,7 +4,7 @@ include '../../includes/dbconfig.php';
 extract($_POST);
 
 $id = $_POST['id'];
-$deleteProduct = mysqli_query($connect, "DELETE FROM Shoes WHERE `Shoes`.`s-id` = '$id'");
+$deleteProduct = mysqli_query($connect, "DELETE FROM Shoes WHERE `Shoes`.`s_id` = '$id'");
 
 
 if($deleteProduct){
