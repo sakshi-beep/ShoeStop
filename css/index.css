@@ -235,6 +235,8 @@ width:49%;
 max-width:315px;
 border-radius: 5px;
 overflow:hidden;
+text-decoration: none;
+color:black
 }
 
 .featured-card:hover{
@@ -361,9 +363,9 @@ top: 594px;
     height:2.563rem
 }
 
-/* .featured-txt{
+.featured-txt{
     font-size: 1.1rem;
-} */
+}
 
 .featured-container{
     gap:2.5rem;
