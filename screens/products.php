@@ -20,16 +20,26 @@ $query = mysqli_query($connect, "SELECT * FROM Shoes WHERE s_id = '$id'");
 <body>
     <div style="width:100%;height:70px;background:yellow"></div>
     <div class="main_container">
-        <div class="product-container">
+        <?php foreach($query as $featured){
+            echo '
+            
+            
+            <div class="product-container">
             <div class="image_container">
-                <img src="https://www.goldstarshoes.com/Media/dragon_1_bl.jpg"
+                <img src='.$featured['s_photo'].'
                     style="object-fit:cover; height:100%; width:100%" />
             </div>
             <div class="details_container">
-                    <p class="product_name">Productname</h1>
-                    <p class="product_category">product category</h2>
-                    <p class="product_price">product price</p>
-                    <p class="product_size">product size</p>
+                    <p class="product_name">'.$featured['s_name'].'</h1>
+                    <p class="product_category">'.$featured['s_category'].'</h2>
+                    <p class="product_price">Rs '.$featured['s_price'].'</p>
+                    <label class="product_size" for="size_container">Size</label>
+                    <div class="size_container">
+                    <a class="size">6</a>
+                    <a class="size">7</a>
+                    <a class="size">8</a>
+                    <a class="size">9</a>
+                    </div>
                     <div class="quantity_container">
                         <p class="product_quantity">Quantity</p>
                         <div class="quantity">
@@ -44,6 +54,10 @@ $query = mysqli_query($connect, "SELECT * FROM Shoes WHERE s_id = '$id'");
                 </div>
             </div>
         </div>
+            ';
+        }
+        ?>
+        
     </div>
 </body>
 
