@@ -14,6 +14,52 @@ body{
     background:#F1F0F0;
 }
 
+.category{
+    font-weight: 600;
+}
+
+.navbar{
+    position:sticky;
+    top:0px;
+    z-index: 1;
+    align-items: center;
+    display:flex;
+    justify-content: space-between;
+   background:#F1F0F0;
+   height:60px;
+   width: 100%;
+   padding:0px 20px;
+   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.product_container{
+    display:flex;
+    position: relative;
+    /* margin-top: 30px; */
+    flex-direction: column;
+     background:#F1F0F0;
+     padding:0px 0px;
+    /* box-shadow: 1px 1px 10px 2px rgba(0, 0, 0, 0.10); */
+border-radius: 10px;
+width:100%;
+max-height:800px;
+/* gap:43px; */
+justify-content: center;
+}
+.details_container{
+    display:flex;
+    gap:23px;
+    flex-direction: column;
+        background:white;
+        border-radius: 5px;
+        
+        max-width: 100%;
+        align-items: flex-start;
+        padding: 30px 30px 30px 30px;
+        height:max-content;
+    }
+    
+    
 .main_container{
     width:100%;
     justify-content: center;
@@ -21,85 +67,54 @@ body{
     /* align-items: center; */
 }
 
-.product-container{
-    display:flex;
-    flex-direction: row;
-     background:#F1F0F0;
-     padding:87px 10px;
-    /* background:red;  */
-    box-shadow: 1px 1px 10px 2px rgba(0, 0, 0, 0.25);
-border-radius: 10px;
-width:90%;
-max-width: 1200px;
-gap:43px;
-justify-content: center;
-}
-
-.image_container{
-    width:480px;
-    max-width: 480px;
-    height:300px;
-}
-
-.details_container{
-display:flex;
-gap:23px;
-flex-direction: column;
-    background:white;
-    border-radius: 5px;
-    width:450px;
-    max-width: 450px;
-    align-items: flex-start;
-    padding: 30px 45px 54px 45px;
-    height:max-content;
-}
-
-
-
+    
 p{
     align-self: flex-start;
 }
 
 .product_name{
-    font-size: 2rem;
+    font-size: 1.3rem;
     font-weight: 700;
 }
 
 .product_category{
-    font-size: 1.5rem;
-    font-weight:300;
+    font-size: 1.2rem;
+    font-weight:500;
 }
 
 .product_price{
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 500;
 }
 
 
 .product_size{
     font-weight: 500;
-font-size: 1.5rem;
+font-size: 1.1rem;
 }
 
 .size_container{
     display:flex;
-    gap:33px;
+    /* gap:21px; */
+    width:100%;
+    /* justify-content: space-between; */
 }
 
 .size{
     display:flex;
     align-items: center;
+    margin: 0px 21px;
     justify-content: center;
     cursor: pointer;
-    font-size: 2rem;
-    height:50px;
-    width:50px;
+    font-size: 1.3rem;
+    height:35px;
+    width: 35px;;
     border:none;
     background:#F1F0F0;
 }
 .product_quantity{
    
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     font-weight:500
 }
 
@@ -110,21 +125,20 @@ font-size: 1.5rem;
 }
 
 .quantity{
-    background:inherit;
     display:flex;
     gap:16px;
     align-items: center;
 }
 
 .quantity_value{
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     font-weight:500
 }
 
 .quantity_btn{
-    font-size: 2rem;
-    height:50px;
-    width:50px;
+    font-size: 1.5rem;
+    height:35px;
+    width:35px;
     border:none;
     background:#F1F0F0;
 }
@@ -132,18 +146,159 @@ font-size: 1.5rem;
 .btn_container{
     display: flex;
     margin-top:10px;
-    /* align-self: center; */
+    align-self: center;
     flex-direction: column;
     gap:18px;
 }
 
 .btn{
     color:white;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     font-weight: 500;
     border:none;
-width:350px;
+width:265px;
 border-radius: 5px;
 height:45px;
     background:black
+}
+
+@media(min-width:768px) {
+    .navbar{
+        position:sticky;
+        align-items: center;
+        display:flex;
+        justify-content: space-between;
+       background:#F1F0F0;
+       height:70px;
+       width: 100%;
+       padding:0px 20px;
+       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    
+    
+    .product_container{
+        margin-top: 30px;
+        flex-direction: row;
+         padding:65px 10px;
+    border-radius: 10px;
+    width:90%;
+    max-width: 1200px;
+    max-height:800px;
+    gap:43px;
+    }
+    
+    .image_container{
+        width:480px;
+        max-width: 480px;
+        height:300px;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    
+    .details_container{
+    display:flex;
+    gap:23px;
+    flex-direction: column;
+        background:white;
+        border-radius: 5px;
+        width:450px;
+        max-width: 450px;
+        align-items: flex-start;
+        padding: 30px 45px 54px 45px;
+        height:max-content;
+    }
+    
+    
+    
+    p{
+        align-self: flex-start;
+    }
+    
+    .product_name{
+        font-size: 2rem;
+        font-weight: 700;
+    }
+    
+    .product_category{
+        font-size: 1.5rem;
+        font-weight:300;
+    }
+    
+    .product_price{
+        font-size: 1.8rem;
+        font-weight: 500;
+    }
+    
+    
+    .product_size{
+        font-weight: 500;
+    font-size: 1.5rem;
+    }
+    
+    .size_container{
+        display:flex;
+        gap:33px;
+    }
+    
+    .size{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 1.5rem;
+        height:50px;
+        width:50px;
+        border:none;
+        background:#F1F0F0;
+    }
+    .product_quantity{
+       
+        font-size: 1.6rem;
+        font-weight:500
+    }
+    
+    .quantity_container{
+        display: flex;
+        flex-direction: column;
+        gap:23px;
+    }
+    
+    .quantity{
+        display:flex;
+        gap:16px;
+        align-items: center;
+    }
+    
+    .quantity_value{
+        font-size: 2rem;
+        font-weight:500
+    }
+    
+    .quantity_btn{
+        font-size: 2rem;
+        height:50px;
+        width:50px;
+        border:none;
+        background:#F1F0F0;
+    }
+    
+    .btn_container{
+        display: flex;
+        margin-top:10px;
+        /* align-self: center; */
+        flex-direction: column;
+        gap:18px;
+    }
+    
+    .btn{
+        color:white;
+        font-size: 1.2rem;
+        font-weight: 500;
+        border:none;
+    width:350px;
+    border-radius: 5px;
+    height:45px;
+        background:black
+    }
+    
 }

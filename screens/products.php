@@ -18,20 +18,31 @@ $query = mysqli_query($connect, "SELECT * FROM Shoes WHERE s_id = '$id'");
 </head>
 
 <body>
-    <div style="width:100%;height:70px;background:yellow"></div>
+    <!-- <div style="width:100%;height:70px;background:yellow"></div> -->
+    <nav class="navbar">
+        <div class="logoandmenu">
+
+            <div class="logo_container">
+                <img src="../images/logo-big.svg" alt="Shoe logo" class="logo">
+            </div>
+        </div>
+        <a class="hamburger">
+            <img src="../images/hamburger.svg">
+        </a>
+    </nav>
     <div class="main_container">
         <?php foreach($query as $featured){
             echo '
             
             
-            <div class="product-container">
+            <div class="product_container">
             <div class="image_container">
                 <img src='.$featured['s_photo'].'
                     style="object-fit:cover; height:100%; width:100%" />
             </div>
             <div class="details_container">
-                    <p class="product_name">'.$featured['s_name'].'</h1>
-                    <p class="product_category">'.$featured['s_category'].'</h2>
+                    <p class="product_name">'.$featured['s_name'].'</p>
+                    <p class="product_category"><span class="category">Category:  </span> '.$featured['s_category'].'</p>
                     <p class="product_price">Rs '.$featured['s_price'].'</p>
                     <label class="product_size" for="size_container">Size</label>
                     <div class="size_container">

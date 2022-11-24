@@ -50,7 +50,7 @@
     <div class="featured-container">
         <h2 class="container-title">Featured</h2>
         <div class="featured-products">
-            <?php
+        <?php
 include "./includes/dbconfig.php";
 $featuredProduct = mysqli_query($connect, "SELECT * from Shoes where isFeatured = '1'");
 
@@ -68,7 +68,7 @@ foreach($featuredProduct as $isFeatured){
 </a>';
 }
 ?>
-        </div>
+    </div>
     </div>
 </body>
 
