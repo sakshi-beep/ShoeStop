@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
     <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="./css/index.css?v=<?php echo time();?>" />
-    <script src="./js/index.js"></script>
+    <script src="./js/index.js?v=<?php echo time(); ?>"></script>
 </head>
 
 <body style="overflow-x:hidden;">
@@ -50,25 +50,26 @@
     <div class="featured-container">
         <h2 class="container-title">Featured</h2>
         <div class="featured-products">
-        <?php
+            <?php
 include "./includes/dbconfig.php";
 $featuredProduct = mysqli_query($connect, "SELECT * from Shoes where isFeatured = '1'");
 
 foreach($featuredProduct as $isFeatured){
 
-    echo '<div class="featured-card">
+    echo '<a class="featured-card" href="/shoestop/screens/products.php?id='.$isFeatured['s_id'].'/'.$isFeatured['s_name'].'">
     <div class="image-container">
         <img src='.$isFeatured['s_photo'].'
-            class="featured-img">
+            class="featured-img" />
+        </div>
         <div class="featured-desc">
             <p class="featured-txt">'.$isFeatured['s_name'].'</p>
             <p class="featured-txt">Rs.'.$isFeatured['s_price'].'</p>
         </div>
-    </div>
-</div>';
+    
+</a>';
 }
 ?>
-    </div>
+        </div>
     </div>
 </body>
 
