@@ -14,6 +14,8 @@ $query = mysqli_query($connect, "SELECT * FROM Shoes WHERE s_id = '$id'");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/products.css?v=<?php echo time();?>" />
+    <script src="../js/products.js?v=2345672156"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <title>Products</title>
 </head>
 
@@ -38,7 +40,7 @@ $query = mysqli_query($connect, "SELECT * FROM Shoes WHERE s_id = '$id'");
             <div class="product_container">
             <div class="image_container">
                 <img src='.$featured['s_photo'].'
-                    style="object-fit:cover; height:100%; width:100%" />
+                    style="object-fit:cover; height:100%; width:100%;border-radius:5px" />
             </div>
             <div class="details_container">
                     <p class="product_name">'.$featured['s_name'].'</p>
@@ -54,9 +56,9 @@ $query = mysqli_query($connect, "SELECT * FROM Shoes WHERE s_id = '$id'");
                     <div class="quantity_container">
                         <p class="product_quantity">Quantity</p>
                         <div class="quantity">
-                            <button class="quantity_btn">+</button>
-                            <p class="quantity_value">1</p>
-                            <button class="quantity_btn">-</button>
+                            <button class="quantity_btn" onclick= incDec("+")>+</button>
+                            <p class="quantity_value" id="quantity_value">1</p>
+                            <button class="quantity_btn" onclick= incDec("-")>-</button>
                         </div>
                     </div>
                 <div class="btn_container">
