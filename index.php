@@ -50,7 +50,7 @@
     <div class="featured-container">
         <h2 class="container-title">Featured</h2>
         <div class="featured-products">
-        <?php
+            <?php
 include "./includes/dbconfig.php";
 $featuredProduct = mysqli_query($connect, "SELECT * from Shoes where isFeatured = '1'");
 
@@ -59,16 +59,17 @@ foreach($featuredProduct as $isFeatured){
     echo '<a class="featured-card" href="/shoestop/screens/products.php?id='.$isFeatured['s_id'].'/'.$isFeatured['s_name'].'">
     <div class="image-container">
         <img src='.$isFeatured['s_photo'].'
-            class="featured-img">
+            class="featured-img" />
+        </div>
         <div class="featured-desc">
             <p class="featured-txt">'.$isFeatured['s_name'].'</p>
             <p class="featured-txt">Rs.'.$isFeatured['s_price'].'</p>
         </div>
-    </div>
+    
 </a>';
 }
 ?>
-    </div>
+        </div>
     </div>
 </body>
 
