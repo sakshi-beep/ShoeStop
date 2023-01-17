@@ -62,7 +62,6 @@ foreach($featuredProduct as $isFeatured){
             class="featured-img" />
         </div>
         <div class="featured-desc">
-asfsadfklja;sdfj;askdfjj;sakjdf;skjafd;lwkjeff
             <p class="featured-txt">'.$isFeatured['s_name'].'</p>
             <p class="featured-txt">Rs.'.$isFeatured['s_price'].'</p>
         </div>
