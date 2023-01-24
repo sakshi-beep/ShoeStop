@@ -13,7 +13,7 @@
                 <div class="two-input-container">
 
                     <label class="input-labels">Category</label>
-                    <select name="update-category">
+                    <select name="update-category" id="update-category">
                         <option value="casual">Casual</option>
                         <option value="sports">Sports</option>
                         <option value="formal">Formal</option>
@@ -32,7 +32,16 @@
                 <div class="two-input-container">
 
                     <label class="input-labels">Featured</label>
-                    <select name="update-featured">
+                    <select name="update-featured" id="update-featured">
+                        <option value=1>yes</option>
+                        <option value=0>no</option>
+
+                    </select>
+                </div>
+                <div class="two-input-container">
+
+                    <label class="input-labels">In Stock</label>
+                    <select name="update-stock" id="update-stock">
                         <option value=1>yes</option>
                         <option value=0>no</option>
 
@@ -61,7 +70,7 @@
                 </div>
             </div>
             <div id="updateimage-div">
-                <img src="" id="new-photo">
+                <img src="" id="new-photo" style="width:100%">
             </div>
 
             <button id="btn-submit" onclick="updateProduct()">Update Product</button>

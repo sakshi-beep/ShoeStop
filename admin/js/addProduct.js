@@ -25,8 +25,8 @@ const deleteProduct = (sID) => {
     event.preventDefault();
     $.post(
         "../helpers/deleteProduct.php", {
-            id: sID
-        },
+        id: sID
+    },
         result => {
             $(".allproducts-container").load("addProduct.php .allproducts-container");
             $(".add-products").load("addProduct.php .add-products");
@@ -35,22 +35,49 @@ const deleteProduct = (sID) => {
 }
 
 
-const showUpForm =(productid)=>{
-$.post(
-    `../helpers/updateProduct.php`, 
-    {
-        id:productid
-    },
-    result=>console.log(result)
-    // $("#update-name").val(result)
-)
-
+const showUpForm = (pname, photo, size, category, price, quantity, isFeatured, inStock) => {
+    document.getElementById('update-name').value = pname;
+    document.getElementById('update-category').value = category;
+    document.getElementById('new-photo').src = photo;
+    const blah = document.getElementById('update-featured').value = isFeatured;
+    document.getElementById('update-photo').value = photo;
+    document.getElementById('update-size').value = size;
+    document.getElementById('update-price').value = price;
+    document.getElementById('update-quantity').value = quantity;
+    document.getElementById('update-stock').value = inStock;
+    
     $("#products-form-container").hide();
     $(".updateform-container").show();
 }
-const cancelUpdate = () =>{
-$(".updateform-container").hide();
-$("#products-form-container").show();
+const updateProduct = (id) =>{
+    event.preventDefault();
+    const pname = document.getElementById('update-name').value 
+    const pcategory = document.getElementById('update-category').value 
+    const pphoto = document.getElementById('update-photo').value 
+    const psize = document.getElementById('update-size').value
+    const pprice = document.getElementById('update-price').value
+    const pquantity = document.getElementById('update-quantity').value
+    const isFeatured = document.getElementById('update-featured').value
+    const inStock = document.getElementById('update-stock').value
+    const updatedProduct = {
+        s_name :pname,
+        s_category :pcategory,
+        s_photo:pphoto,
+        s_size:psize,
+        s_price:pprice,
+        s_quantity:pquantity,
+        isFeatured:isFeatured,
+        in_stock :inStock
+    }
+    $.post("../helpers/handleAddProduct.php", updatedProduct, result => {
+        $(".allproducts-container").load("addProduct.php .allproducts-container");
+        alert(result);
+
+    })
+}
+const cancelUpdate = () => {
+    $(".updateform-container").hide();
+    $("#products-form-container").show();
 }
 
 
