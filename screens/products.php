@@ -63,7 +63,7 @@ $query = mysqli_query($connect, "SELECT * FROM Shoes WHERE s_id = '$id'");
                     </div>
                 <div class="btn_container">
                     <button class="btn" >Buy Now</button>
-                    <button class="btn" onclick =addtoCart() >Add To Cart</button>
+                    <button class="btn" onclick ="addtoCart(\''. $featured['s_name'] .'\',\''. $featured['s_photo'] .'\', \''. $featured['s_size'] .'\', \''. $featured['s_category'] .'\', \''. $featured['s_price'] .'\', \''. $featured['s_quantity'] .'\', \''. $featured['s_id'] .'\')" >Add To Cart</button>
                 </div>
             </div>
         </div>
