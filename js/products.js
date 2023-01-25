@@ -24,3 +24,8 @@ document.getElementById("quantity_value").innerHTML= value;
 
 }
 }
+
+
+const addtoCart=()=>{
+    alert("asfdasdf");
+}
