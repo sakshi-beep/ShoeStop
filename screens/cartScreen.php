@@ -13,16 +13,16 @@
     <div class="cart">
         <h2>Cart</h2>
         <table>
-  <tr>
-    <th>Product Image</th>
+  <tr class="identifier_row">
+    <th>Product</th>
     <th>Name</th>
     <th>Size</th>
     <th>Quantity</th>
     <th>Price</th>
     <th>Action</th>
   </tr>
-  <tr>
-    <td><img src="https://calibershoes.sgp1.digitaloceanspaces.com/uploads/2022/06/06135153/1-6-600x450.jpg" alt="product1" style="height:40px;width:40px"></td>
+  <tr class="product_row">
+    <td><img src="https://calibershoes.sgp1.digitaloceanspaces.com/uploads/2022/06/06135153/1-6-600x450.jpg" alt="product1"  class="product-img"></td>
     <td>Product 1</td>
     <td>Medium</td>
     <td>2</td>
@@ -32,8 +32,8 @@
       <button><img src="../images/x-circle.svg"/></button>
     </td>
   </tr>
-  <tr>
-    <td><img src="https://calibershoes.sgp1.digitaloceanspaces.com/uploads/2022/12/19131405/IMG_4136.jpg" alt="product2" style="height:40px;width:40px"></td>
+  <tr class="product_row">
+    <td><img src="https://calibershoes.sgp1.digitaloceanspaces.com/uploads/2022/12/19131405/IMG_4136.jpg" alt="product2"   class="product-img"></td>
     <td>Product 2</td>
     <td>Large</td>
     <td>1</td>
@@ -43,8 +43,8 @@
       <button><img src="../images/x-circle.svg"/></</button>
     </td>
   </tr>
-  <tr>
-    <td><img src="https://calibershoes.sgp1.digitaloceanspaces.com/uploads/2022/12/19131405/IMG_4136.jpg" alt="product2" style="height:40px;width:40px"></td>
+  <tr class="product_row">
+    <td><img src="https://calibershoes.sgp1.digitaloceanspaces.com/uploads/2022/12/19131405/IMG_4136.jpg" alt="product2" class="product-img"></td>
     <td>Product 2</td>
     <td>Large</td>
     <td>1</td>
