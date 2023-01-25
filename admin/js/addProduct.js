@@ -1,4 +1,4 @@
-
+let sid;
 const addProduct = () => {
     event.preventDefault();
     const formValues = $("form").serializeArray();
@@ -35,7 +35,7 @@ const deleteProduct = (sID) => {
 }
 
 
-const showUpForm = (pname, photo, size, category, price, quantity, isFeatured, inStock) => {
+const showUpForm = (pname, photo, size, category, price, quantity, isFeatured, inStock, pid) => {
     document.getElementById('update-name').value = pname;
     document.getElementById('update-category').value = category;
     document.getElementById('new-photo').src = photo;
@@ -45,11 +45,11 @@ const showUpForm = (pname, photo, size, category, price, quantity, isFeatured, i
     document.getElementById('update-price').value = price;
     document.getElementById('update-quantity').value = quantity;
     document.getElementById('update-stock').value = inStock;
-    
+    sid = pid;
     $("#products-form-container").hide();
     $(".updateform-container").show();
 }
-const updateProduct = (id) =>{
+const updateProduct = () =>{
     event.preventDefault();
     const pname = document.getElementById('update-name').value 
     const pcategory = document.getElementById('update-category').value 
@@ -60,6 +60,7 @@ const updateProduct = (id) =>{
     const isFeatured = document.getElementById('update-featured').value
     const inStock = document.getElementById('update-stock').value
     const updatedProduct = {
+        s_id :sid,
         s_name :pname,
         s_category :pcategory,
         s_photo:pphoto,
@@ -69,9 +70,18 @@ const updateProduct = (id) =>{
         isFeatured:isFeatured,
         in_stock :inStock
     }
-    $.post("../helpers/handleAddProduct.php", updatedProduct, result => {
-        $(".allproducts-container").load("addProduct.php .allproducts-container");
-        alert(result);
+    $.post("../helpers/updateProduct.php", updatedProduct, result => {
+
+        if(result == 'Product Updated')
+        {
+            alert(result);
+            $(".allproducts-container").load("addProduct.php .allproducts-container");
+            $(".updateform-container").hide();
+            $("#products-form-container").show();
+        }
+        else{
+            alert(result);
+        }
 
     })
 }

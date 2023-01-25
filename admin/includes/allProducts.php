@@ -8,7 +8,7 @@ foreach($allProducts as $values){
                     echo '<div class="product-card">
                     <div class="image-div">
                     <img src='.$values['s_photo'].' class="image" alt="image of shoes"/>
-                    <a class="edit" onclick="showUpForm(\''. $values['s_name'] .'\',\''. $values['s_photo'] .'\', \''. $values['s_size'] .'\', \''. $values['s_category'] .'\', \''. $values['s_price'] .'\', \''. $values['s_quantity'] .'\', \''. $values['isFeatured'] .'\', \''. $values['in_stock'] .'\')">
+                    <a class="edit" onclick="showUpForm(\''. $values['s_name'] .'\',\''. $values['s_photo'] .'\', \''. $values['s_size'] .'\', \''. $values['s_category'] .'\', \''. $values['s_price'] .'\', \''. $values['s_quantity'] .'\', \''. $values['isFeatured'] .'\', \''. $values['in_stock'] .'\', \''. $values['s_id'] .'\')">
                     <img src="../../images/edit.svg" alt="edit-button-image"/>
                     </a>
                     </div>
