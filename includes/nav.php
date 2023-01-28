@@ -32,7 +32,7 @@ $item_count = count($_SESSION['cart']);
         }
         ?>
                 <li class="nav-item" data="5">
-                <a  href="#" class="nav-link" style="position:relative"><img src="./images/products.svg" /><span style=" position:absolute;background-color:red;color:white; display:flex; height:1.5rem;width:1.5rem; border-radius:50%; align-items:center; justify-content:center; bottom:1.35rem; left:1.65rem"><?php echo "$item_count";?></span></a>
+                <a  href="#" class="nav-link" style="position:relative"><img src="./images/products.svg" /><span class="product_badge"><?php echo "$item_count";?></span></a>
             </li>
 
 
