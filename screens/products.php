@@ -14,7 +14,7 @@ $query = mysqli_query($connect, "SELECT * FROM Shoes WHERE s_id = '$id'");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/products.css?v=<?php echo time();?>" />
-    <script src="../js/products.js?2354234"></script>
+    <script src="../js/products.js?2354456"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <title>Products</title>
 </head>
