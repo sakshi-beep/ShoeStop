@@ -15,8 +15,16 @@ if(empty($_SESSION['fullname'])) {
    echo 'not logged in';
 }
 else {
-    $_SESSION['cart'][] = array();
-array_push($_SESSION['cart'], array(
+// array_push($_SESSION['cart'], array(
+//     'id' => $id,
+//     'name' => $name,
+//     'photo'=>$photo,
+//     'category'=>$category,
+//     'price' => $price,
+//     'size'=>$size,
+//     'quantity' => $quantity
+// ));
+$_SESSION['cart'][] = array(
     'id' => $id,
     'name' => $name,
     'photo'=>$photo,
@@ -24,7 +32,7 @@ array_push($_SESSION['cart'], array(
     'price' => $price,
     'size'=>$size,
     'quantity' => $quantity
-));
+);
 echo json_encode($_SESSION['cart']);
 
 }

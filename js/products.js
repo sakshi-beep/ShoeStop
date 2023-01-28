@@ -43,8 +43,11 @@ const addtoCart=(pname, photo, size, category, price, quantity, id)=>{
         window.location.href = "../screens/login.php";
        }
        else{
-        alert(result);
-       }
+           $.post("../screens/cartScreen.php", ()=>{
+               window.location.href="../screens/cartScreen.php";
+            })
+            console.log(result);
+        }
 
     })
 

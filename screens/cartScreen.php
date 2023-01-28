@@ -1,6 +1,6 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +12,7 @@
 <body>
     <div class="cart">
         <h2>Cart</h2>
-        <table>
+        <!-- <table>
   <tr class="identifier_row">
     <th>Product</th>
     <th>Name</th>
@@ -40,7 +40,7 @@
     <td>$30</td>
     <td class="action">
       <button><img src="../images/edit3.svg"/></button>
-      <button><img src="../images/x-circle.svg"/></</button>
+      <button><img src="../images/x-circle.svg"/></button>
     </td>
   </tr>
   <tr class="product_row">
@@ -51,9 +51,39 @@
     <td>$30</td>
     <td class="action">
       <button><img src="../images/edit3.svg"/></button>
-      <button><img src="../images/x-circle.svg"/></</button>
+      <button><img src="../images/x-circle.svg"/></button>
     </td>
   </tr>
+</table> -->
+<table>
+  <tr class="identifier_row">
+    <th>Product</th>
+    <th>Name</th>
+    <th>Size</th>
+    <th>Quantity</th>
+    <th>Price</th>
+    <th>Action</th>
+  </tr>
+
+ <?php 
+ 
+ foreach($_SESSION['cart'] as $item){
+  
+  echo '  <tr class="product_row">
+  <td><img src='.$item['photo'].' alt="product2" class="product-img"></td>
+  <td>'.$item['name'].'</td>
+  <td>'.$item['size'].'</td>
+  <td>'.$item['quantity'].'</td>
+  <td>'.$item['price'].'</td>
+  <td class="action">
+    <button><img src="../images/edit3.svg"/></button>
+    <button><img src="../images/x-circle.svg"/></button>
+  </td>
+</tr>';
+
+ }
+ 
+ ?>
 </table>
     </div>
 </body>
