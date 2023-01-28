@@ -24,20 +24,27 @@ body {
   height: 3.5rem;
 }
 
-
-.product_badge {
-  position: absolute;
-  background-color: red;
-  color: white;
-  display: flex;
-  height: 1.5rem;
-  width: 1.5rem;
-  border-radius: 50%;
-  align-items: center;
-  justify-content: center;
-  bottom: 1.35rem;
-  left: 1.65rem;
+.products-icon {
+  position: relative;
 }
+
+.products-icon ::after {
+  content: attr(data);
+  position: absolute;
+  top: -0.2rem;
+  left:1.2rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: red;
+}
+
 
 #search-input {
   border-width: 0 0 2px;

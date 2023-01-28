@@ -1,11 +1,15 @@
 <?php
 session_start();
 $fullname = $_SESSION['fullname'];
-$item_count = count($_SESSION['cart']);
+if(isset($_SESSION['cart'])){
+
+    $item_count = count($_SESSION['cart']);
+}
 
 ?>
 
-<nav class="navbar navbar-light fixed-top  navbar-expand-lg p-1" style=" background-color:#F1F0F0;box-shadow:0px 2px 4px 1px rgba(0, 0, 0, 0.2);">
+<nav class="navbar navbar-light fixed-top  navbar-expand-lg p-1"
+    style=" background-color:#F1F0F0;box-shadow:0px 2px 4px 1px rgba(0, 0, 0, 0.2);">
 
 
     <a href="#" class="navbar-brand"><img src="./images/logo-big.svg" class="main-logo" /></a>
@@ -13,9 +17,9 @@ $item_count = count($_SESSION['cart']);
         <img src="./images/hamburger.svg">
     </button>
     <div class="navbar-collapse collapse" id="navbar">
-        <form class="form-group-lg d-flex mx-auto p-2" >
+        <form class="form-group-lg d-flex mx-auto p-2">
             <input class="form-control input-lg" type="search" placeholder="Search in the store"
-                aria-label="Search for products" id="search-input"/>
+                aria-label="Search for products" id="search-input" />
 
             <button style="background:none; border:none;margin-left:10px; border-radius:10px"><img
                     src="./images/search-icon.svg"></button>
@@ -31,8 +35,21 @@ $item_count = count($_SESSION['cart']);
             echo '<li class="nav-item"><a href="/shoestop/screens/login.php" class="nav-link" style="margin-top: 6px">LOGIN</a></li>';
         }
         ?>
-                <li class="nav-item" data="5">
-                <a  href="#" class="nav-link" style="position:relative"><img src="./images/products.svg" /><span class="product_badge"><?php echo "$item_count";?></span></a>
+            <li class="nav-item <?php if($item_count>0)
+                {
+                    echo 'products-icon';
+                    
+                }
+                ?>" >
+                <a href="/shoestop/screens/cartScreen.php" class="nav-link"  <?php if($item_count>0)
+                {
+                    echo 'data= '.$item_count.'';
+                    
+                }
+                ?>
+                style="position:relative"><img
+                        src="./images/products.svg" />
+                </a>
             </li>
 
 
