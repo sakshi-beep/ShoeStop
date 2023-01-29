@@ -16,9 +16,7 @@
 </head>
 
 <body style="overflow-x:hidden;">
-    <?php
-    require './includes/nav.php';
-    ?>
+    <?php include './includes/nav.php' ?>
     <main class="hero">
         <div class="heroimage">
             <img src="./images/shoelogo.svg" class="shoeimage-mobile" id="shoe" />

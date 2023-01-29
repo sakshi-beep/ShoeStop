@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 session_start();
 include '../includes/dbconfig.php';
 extract($_POST);
@@ -24,9 +26,6 @@ $_SESSION['cart'][] = array(
     'size'=>$size,
     'quantity' => $quantity
 );
-
-$num = count($_SESSION['cart']);
- echo $num;
 
 }
 

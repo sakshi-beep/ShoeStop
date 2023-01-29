@@ -35,13 +35,13 @@ if(isset($_SESSION['cart'])){
             echo '<li class="nav-item"><a href="/shoestop/screens/login.php" class="nav-link" style="margin-top: 6px">LOGIN</a></li>';
         }
         ?>
-            <li class="nav-item <?php if($item_count>0)
+            <li class="nav-item <?php if(isset($item_count)>0)
                 {
                     echo 'products-icon';
                     
                 }
                 ?>" >
-                <a href="/shoestop/screens/cartScreen.php" class="nav-link"  <?php if($item_count>0)
+                <a href="/shoestop/screens/cartScreen.php" class="nav-link"  <?php if(isset($item_count)>0)
                 {
                     echo 'data= '.$item_count.'';
                     

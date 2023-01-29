@@ -82,9 +82,5 @@ class Product {
   }
 }
 
-const product = new Product(
-  productImage,
-  productName,
-  productCategory,
-  productQuantity
+const product = new Product( productImage,productName,productCategory, productQuantity
 );
