@@ -43,30 +43,31 @@ class Product {
     }
   }
 
-  addtoCart(productID, productPrice){
-    this.price  = this.quantity*productPrice;
-    this.id =productID;
+  addtoCart(productID, productPrice) {
+    this.price = this.quantity * productPrice;
+    this.id = productID;
     const PRODUCT = {
-        s_id: this.id,
-        s_name: this.name,
-        s_photo: this.photo,
-        s_category: this.category,
-        s_price: this.price,
-        s_size: this.size,
-        s_quantity: this.quantity,
-      };
-      console.log(PRODUCT);
-      $.post("../includes/cart.php", PRODUCT, (result) => {
-        if (result === "not logged in") {
-          alert(`${result}, redirecting to login page`);
-          window.location.href = "../screens/login.php";
-        } else {
-          window.location.href = "../screens/cartScreen.php";
-        }
-      });
+      s_id: this.id,
+      s_name: this.name,
+      s_photo: this.photo,
+      s_category: this.category,
+      s_price: this.price,
+      s_size: this.size,
+      s_quantity: this.quantity,
+    };
+    console.log(PRODUCT);
+    $.post("../includes/cart.php", PRODUCT, (result) => {
+      if (result === "not logged in") {
+        alert(`${result}, redirecting to login page`);
+        window.location.href = "../screens/login.php";
+      } else {
+        // alert(result);
+        window.location.href = "../screens/cartScreen.php";
+      }
+    });
   }
 
-  setSize(){
+  setSize() {
     const elements = document.getElementsByClassName("size");
     for (const element of elements) {
       if (element === event.target) {
@@ -81,5 +82,9 @@ class Product {
   }
 }
 
-const product = new Product(productImage, productName, productCategory, productQuantity);
-
+const product = new Product(
+  productImage,
+  productName,
+  productCategory,
+  productQuantity
+);
