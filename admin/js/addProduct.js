@@ -80,7 +80,7 @@ const updateProduct = () =>{
             $("#products-form-container").show();
         }
         else{
-            alert(result);
+            console.log(result);
         }
 
     })
