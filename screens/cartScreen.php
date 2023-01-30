@@ -10,6 +10,8 @@
     <script  defer>
         const deleteCartItem = (id) =>{
 $.post("../includes/deleteCartItems.php", {id:id}, result=>{
+    $("table").load("cartScreen.php table");
+//   $(".product_row").load("cartScreen.php .product_row");
   console.log(result);
 })
 }
