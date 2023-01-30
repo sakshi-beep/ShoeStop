@@ -82,5 +82,12 @@ class Product {
   }
 }
 
+
+const deleteCartItem = (id) =>{
+$.post("../includes/deleteCartItems.php", {id:id}, result=>{
+  console.log(result);
+})
+}
+
 const product = new Product( productImage,productName,productCategory, productQuantity
 );
