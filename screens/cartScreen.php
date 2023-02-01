@@ -1,4 +1,8 @@
-<?php session_start(); ?>
+<?php session_start();
+if(isset($_SESSION['cart'])){
+    $count = count($_SESSION['cart']);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,14 +11,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" defer></script>
-    <script  defer>
-        const deleteCartItem = (id) =>{
-$.post("../includes/deleteCartItems.php", {id:id}, result=>{
-    $("table").load("cartScreen.php table");
-//   $(".product_row").load("cartScreen.php .product_row");
-  console.log(result);
-})
-}
+    <script defer>
+    const deleteCartItem = (id) => {
+        $.post("../includes/deleteCartItems.php", {
+            id: id
+        }, result => {
+            $("table").load("cartScreen.php table");
+            console.log(result);
+        })
+    }
     </script>
 
     <link rel=stylesheet href="../css/cart.css" />
@@ -31,7 +36,7 @@ $.post("../includes/deleteCartItems.php", {id:id}, result=>{
                 <th>Size</th>
                 <th>Quantity</th>
                 <th>Price</th>
-                <th>Action</th>
+                <th>Action</th> 
             </tr>
 
             <?php 
@@ -56,6 +61,14 @@ $.post("../includes/deleteCartItems.php", {id:id}, result=>{
  
  
  ?>
+            <?php  if($count<1){
+    echo "<tr>
+    <td style='height:48px; width:100%;'>
+    No Items available
+    </td>
+    </tr>
+    ";
+ }?>
         </table>
     </div>
 </body>

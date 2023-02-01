@@ -1,6 +1,7 @@
 <?php
 include '../../includes/dbconfig.php';
-
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 extract($_POST);
 if(isset($_POST)){
     $name = $_POST['product-name'];

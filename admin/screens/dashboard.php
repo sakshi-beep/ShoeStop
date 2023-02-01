@@ -1,4 +1,19 @@
-    <div id="content-container">
+<?php 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+$host="localhost";
+$user="root";
+$password="";
+$dbname="shoe-stop";
+$connect=mysqli_connect($host,$user,$password,$dbname);
+$total_products = mysqli_query($connect, "SELECT * FROM Shoes");
+$total_customers = mysqli_query($connect, "SELECT * FROM customers");
+$products_count = mysqli_num_rows($total_products);
+$customers_count = mysqli_num_rows($total_customers);
+
+?>
+
+<div id="content-container">
         <label class="container-title">Dashboard</label>
         <div id="cards-container">
 
@@ -10,12 +25,12 @@
             <div class="card">
                 <img src="../images/userlogo.svg" style="width:43px; background:none">
                 <p class="card-title">Total users</p>
-                <p class="card-count">148</p>
+                <p class="card-count"><?php echo $customers_count;?></p>
             </div>
             <div class="card">
                 <img src="../images/admin-products.svg" style="width:43px; background:none">
                 <p class="card-title">Total products</p>
-                <p class="card-count">148</p>
+                <p class="card-count"><?php echo $products_count?></p>
             </div>
         </div>
 
