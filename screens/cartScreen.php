@@ -20,9 +20,28 @@ if(isset($_SESSION['cart'])){
             console.log(result);
         })
     }
+
+    const updateQuantity = (id, quantity, type) => {
+
+        if (type === "increment") {
+            quantity < 3 && ++quantity
+        }
+        if (type === "decrement") {
+            quantity > 1 && --quantity
+        }
+
+        $.post("../includes/updateCartItems.php", {
+            id: id,
+            quantity: quantity
+
+        }, result => {
+            $("table").load("cartScreen.php table");
+            console.log(result);
+        })
+    }
     </script>
 
-    <link rel=stylesheet href="../css/cart.css" />
+    <link rel="stylesheet" href="../css/cart.css?v234574324" />
     <title>Cart</title>
 </head>
 
@@ -36,7 +55,7 @@ if(isset($_SESSION['cart'])){
                 <th>Size</th>
                 <th>Quantity</th>
                 <th>Price</th>
-                <th>Action</th> 
+                <th>Action</th>
             </tr>
 
             <?php 
@@ -48,10 +67,9 @@ if(isset($_SESSION['cart'])){
   <td><img src='".$item['photo']."' alt='product2' class='product-img'></td>
   <td>".$item['name']."</td>
   <td>".$item['size']."</td>
-  <td>".$item['quantity']."</td>
+  <td class='cart-td'><button class='quantity-btn' onclick=".'updateQuantity('.$item['id'].','.$item['quantity'].',"decrement")'.">-</button>".$item['quantity']."<button class='quantity-btn' onclick=".'updateQuantity('.$item['id'].','.$item['quantity'].',"increment")'.">+</button></td>
   <td>".$item['price']."</td>
   <td class='action'>
-    <button><img src='../images/edit3.svg'/></button>
     <button onclick = 'deleteCartItem(".$item['id'].")' ><img src='../images/x-circle.svg'/></button>
   </td>
 </tr>";

@@ -207,6 +207,7 @@ a:hover {
 .featured-container {
   display: flex;
   width: 100%;
+align-items: center;
   margin-top: 2rem;
   gap: 10px;
   flex-direction: column;
@@ -215,9 +216,10 @@ a:hover {
 .featured-products {
   display: flex;
   width: 100%;
+  max-width: 1900px;
   gap: 5px;
   flex-wrap: wrap;
-  /* align-items: center; */
+  justify-content: center;
 }
 
 .featured-card {

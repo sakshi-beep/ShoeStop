@@ -56,22 +56,20 @@ $query = mysqli_query($connect, "SELECT * FROM Shoes WHERE s_id = '$id'");
                     <div class="quantity_container">
                         <p class="product_quantity">Quantity</p>
                         <div class="quantity">
-                            <button class="quantity_btn" onclick= product.setQuantity("+")>+</button>
-                            <p class="quantity_value" id="quantity_value">1</p>
-                            <button class="quantity_btn" onclick= product.setQuantity("-")>-</button>
+                        <button class="quantity_btn" onclick= product.setQuantity("-")>-</button>
+                        <p class="quantity_value" id="quantity_value">1</p>
+                        <button class="quantity_btn" onclick= product.setQuantity("+")>+</button>
                         </div>
                     </div>
                 <div class="btn_container">
-                    <button class="btn" >Buy Now</button>
-                   
-                    <button class ="btn" onclick="product.addtoCart('.$featured['s_id'].','.$featured['s_price'].' )">add</button>
+                    <button class ="btn" onclick="product.addtoCart('.$featured['s_id'].','.$featured['s_price'].' )">Add to Cart</button>
                 </div>
             </div>
         </div>
             ';
         }
         ?>
-        
+
     </div>
 </body>
 

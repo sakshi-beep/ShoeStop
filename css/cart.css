@@ -50,6 +50,17 @@ td {
     border-bottom: 1px solid #EAE8E8;
 }
 
+.quantity-btn{
+border:1px solid rgb(223, 223, 223);
+ background:rgb(223, 223, 223);
+ padding:0.2em 0.7em;
+ font-size: 24px;
+}
+
+.quantity-btn:hover{
+    border:1px solid black;
+}
+
 button{
     border:none;
     background:none;
@@ -60,4 +71,12 @@ button{
     border-radius: 5px;
     width:62px;
     height:55px;
+}
+
+
+.cart-td{
+    display: flex;
+    gap:15px;
+    /* justify-content: space-between; */
+    align-items: center;
 }
