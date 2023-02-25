@@ -1,0 +1,67 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f1f0f0;
+}
+
+.container {
+  padding: 50px 40px;
+  background-color: white;
+  width: 1400px;
+}
+
+h3 {
+  color: rgb(145, 143, 143);
+}
+
+.casual-card {
+  position: relative;
+  background: white;
+  width: 49%;
+  height: max-content;
+  max-height: 295px;
+  max-width: 275px;
+  border-radius: 5px;
+  overflow: hidden;
+  text-decoration: none;
+  color: black;
+}
+
+.image-container {
+  width: 100%;
+  /* height:300px; */
+}
+
+.casual-img {
+  object-fit: cover;
+  height: 190px;
+  max-height: 200px;
+  width: 100%;
+}
+
+.casual-desc {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  width: 100%;
+  padding: 16px 16px 0px 16px;
+}
+
+.casual-txt {
+  font-weight: 500;
+  text-align: center;
+  background: white;
+  font-size: min(0.9rem, 1.2rem);
+}
+
+.casual-products {
+  margin-top: 35px;
+  display: flex;
+  width: 100%;
+  /* max-width: 1400px; */
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

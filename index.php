@@ -11,11 +11,11 @@
     <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
     <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="./css/index.css?v=<?php echo time();?>" />
+    <link rel="stylesheet" href="./css/index.css?v<?php echo time();?>" />
     <script src="./js/index.js?v=<?php echo time(); ?>"></script>
 </head>
 
-<body style="overflow-x:hidden;">
+<body>
     <?php include './includes/nav.php' ?>
     <main class="hero">
         <div class="heroimage">

@@ -7,45 +7,13 @@ if(isset($_SESSION['cart'])){
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js" defer></script>
-    <script defer>
-    const deleteCartItem = (id) => {
-        $.post("../includes/deleteCartItems.php", {
-            id: id
-        }, result => {
-            $("table").load("cartScreen.php table");
-            console.log(result);
-        })
-    }
-
-    const updateQuantity = (id, quantity, type) => {
-
-        if (type === "increment") {
-            quantity < 3 && ++quantity
-        }
-        if (type === "decrement") {
-            quantity > 1 && --quantity
-        }
-
-        $.post("../includes/updateCartItems.php", {
-            id: id,
-            quantity: quantity
-
-        }, result => {
-            $("table").load("cartScreen.php table");
-            console.log(result);
-        })
-    }
-    </script>
-
-    <link rel="stylesheet" href="../css/cart.css?v234574324" />
-    <title>Cart</title>
+    <script defer src="../js/cart.js"></script>
+    <link rel="stylesheet" href="../css/cart.css?v<?php echo time()?>" />
+    <title>Cart Screen</title>
 </head>
 
 <body>
+    <?php include "../includes/nav.php" ?>
     <div class="cart">
         <h2>Cart</h2>
         <table>

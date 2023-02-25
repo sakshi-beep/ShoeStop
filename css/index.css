@@ -15,8 +15,13 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   background-color: #f1f0f0;
+}
+
+nav{
+  position: sticky;
+  top:10px;
 }
 
 .main-logo {
@@ -46,12 +51,12 @@ body {
 }
 
 
-#search-input {
+/* #search-input {
   border-width: 0 0 2px;
   border-color: black;
   border-radius: 0;
   background-color: #f1f0f0;
-}
+} */
 
 #search-input::placeholder {
   font-family: "Montserrat";
@@ -179,8 +184,9 @@ a:hover {
   color: #000000;
 }
 
-#casual:hover {
-  transition-delay: 5ms;
+#casual:hover{
+transition:all ease-in 0.5s ;
+  /* transition-delay: 0.5; */
   background-size: 600px;
   background-position: center;
 }
@@ -206,7 +212,7 @@ a:hover {
 
 .featured-container {
   display: flex;
-  width: 100%;
+  width: 100vw;
 align-items: center;
   margin-top: 2rem;
   gap: 10px;
@@ -216,7 +222,7 @@ align-items: center;
 .featured-products {
   display: flex;
   width: 100%;
-  max-width: 1900px;
+  max-width: 1400px;
   gap: 5px;
   flex-wrap: wrap;
   justify-content: center;
@@ -324,7 +330,9 @@ align-items: center;
 
   .categories-items {
     flex-direction: row;
-    justify-content: space-evenly;
+    width: 1400px;
+    gap:10px;
+    justify-content: center;
   }
   .btn-action {
     font-size: 1em;
