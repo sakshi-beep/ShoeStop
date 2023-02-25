@@ -3,7 +3,6 @@ const productName = document.getElementById("product_name").innerHTML;
 const productCategory = document.getElementById("product_category").innerHTML;
 const productQuantity = document.getElementById("quantity_value").innerHTML;
 
-
 class Product {
   constructor(photo, name, category, quantity, price, size, id) {
     this.name = name;
@@ -60,8 +59,10 @@ class Product {
       if (result === "not logged in") {
         alert(`${result}, redirecting to login page`);
         window.location.href = "../screens/login.php";
+      } else if (result === "item already exists ") {
+        alert(result);
+        window.location.href = "../index.php";
       } else {
-        // alert(result);
         window.location.href = "../screens/cartScreen.php";
       }
     });
@@ -82,8 +83,9 @@ class Product {
   }
 }
 
-
-
-
-const product = new Product( productImage,productName,productCategory, productQuantity
+const product = new Product(
+  productImage,
+  productName,
+  productCategory,
+  productQuantity
 );
