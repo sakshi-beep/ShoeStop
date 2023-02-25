@@ -10,7 +10,7 @@ $row = mysqli_num_rows($query);
 if ($row) {
     $data = $query->fetch_assoc();
     session_start();
-    $user_id = $data['s_id'];
+    $user_id = $data['id'];
     $fullname = $data['fullname'];
     $_SESSION['fullname'] = $fullname;
     $_SESSION['user_id'] = $user_id;

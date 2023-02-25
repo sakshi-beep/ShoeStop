@@ -1,6 +1,8 @@
 <?php
 
 session_start();
+
+$total = $_SESSION['total_price'];
 ?>
 
 <!DOCTYPE html>
@@ -43,13 +45,13 @@ session_start();
                 ?>
             </table>
         </div>
-        <form method="POST" action="place_order.php" class="checkout-form">
+        <form class="checkout-form" action="../includes/order.php" method="POST">
             <h4>Checkout</h4>
             <label for="shipping_address">Shipping Address:</label>
             <input type="text" name="shipping_address" required class="checkout-input">
             <br>
             <label for="payment_method">Payment Method:</label>
-            <select name="payment_method" required>
+            <select name="payment_method" required id="select">
                 <option value="">Select Payment Method</option>
                 <option value="e-sewa">eSewa</option>
                 <option value="khalti">Khalti</option>
@@ -60,8 +62,25 @@ session_start();
                 class="checkout-input">
             <button type="submit" class="order-btn">Place Order</button>
         </form>
+        <form action="https://uat.esewa.com.np/epay/main" method="POST">
+            <input value="<?php echo $_SESSION['total_price']; ?>" name="tAmt" type="hidden">
+            <input value="<?php echo $_SESSION['total_price']; ?>" name="amt" type="hidden">
+            <input value="0" name="txAmt" type="hidden">
+            <input value="0" name="psc" type="hidden">
+            <input value="0" name="pdc" type="hidden">
+            <input value="EPAYTEST" name="scd" type="hidden">
+            <input value="ee2c3ca1-696b-4cc5-a6be-2c40d929d453" name="pid" type="hidden">
+            <input value="http://merchant.com.np/page/esewa_payment_success?q=su" type="hidden" name="su">
+            <input value="http://merchant.com.np/page/esewa_payment_failed?q=fu" type="hidden" name="fu">
+            <input value="Submit" type="submit">
+        </form>
 
     </div>
+    <script defer>
+    const placeOrder = () => {
+        alert(<?php echo $_SESSION['total_price'] ?>);
+    }
+    </script>
 </body>
 
 </html>
