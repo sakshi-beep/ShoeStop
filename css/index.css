@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&display=swap");
 
 * {
   margin: 0;
@@ -7,7 +7,7 @@
   list-style: none;
   text-decoration: none;
   background-color: #f1f0f0;
-  font-family: "Montserrat";
+  font-family: "Poppins";
 }
 
 body {
@@ -15,18 +15,17 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   background-color: #f1f0f0;
 }
 
-nav{
+nav {
   position: sticky;
-  top:10px;
+  top: 10px;
 }
 
 .main-logo {
-  width: 8.5rem;
-  height: 3.5rem;
+  width: 5.5rem;
+  height: 2.5rem;
 }
 
 .products-icon {
@@ -37,7 +36,7 @@ nav{
   content: attr(data);
   position: absolute;
   top: -0.2rem;
-  left:1.2rem;
+  left: 1.2rem;
   width: 1.2rem;
   height: 1.2rem;
   display: flex;
@@ -50,16 +49,8 @@ nav{
   background-color: red;
 }
 
-
-/* #search-input {
-  border-width: 0 0 2px;
-  border-color: black;
-  border-radius: 0;
-  background-color: #f1f0f0;
-} */
-
 #search-input::placeholder {
-  font-family: "Montserrat";
+  font-family: "Poppins";
   font-weight: 600;
   font-size: 1em;
 }
@@ -109,7 +100,7 @@ nav{
 .mainheading {
   margin-top: 0.75rem;
   font-weight: bold;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 1.8em;
 }
 
@@ -120,13 +111,13 @@ nav{
   text-align: center;
   line-height: 1.5em;
   font-size: 1rem;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 500;
 }
 
 .btn-action {
   font-size: 0.8em;
-  font-family: "Montserrat";
+  font-family: "Poppins";
   margin-top: 0.75rem;
   background-color: black;
   color: white;
@@ -146,7 +137,7 @@ nav{
 
 .container-title {
   text-align: center;
-  font-family: "Montserrat";
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 700;
   font-size: 1.3em;
@@ -184,28 +175,88 @@ a:hover {
   color: #000000;
 }
 
-#casual:hover{
-transition:all ease-in 0.5s ;
-  /* transition-delay: 0.5; */
+.background {
+  position: absolute;
+  transition: all ease-in 0.1s;
+  height: 100%;
+  width: 100%;
+  background: transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#casual:hover {
   background-size: 600px;
   background-position: center;
 }
 
+#formal:hover {
+  background-size: 600px;
+  background-position: center;
+}
+
+#sports:hover {
+  background-size: 600px;
+  background-position: center;
+}
+
+#casual:hover .background {
+  background-color: rgb(255, 255, 255);
+  font-weight: bold;
+  color: rgb(45, 45, 45);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 80%;
+  font-size: 32px;
+}
+
+#sports:hover .background {
+  background-color: rgb(255, 255, 255);
+  font-weight: bold;
+  color: rgb(45, 45, 45);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 80%;
+  font-size: 32px;
+}
+#formal:hover .background {
+  background-color: rgb(255, 255, 255);
+  font-weight: bold;
+  color: rgb(45, 45, 45);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 80%;
+  font-size: 32px;
+}
+
 #casual {
+  position: relative;
+  overflow: hidden;
   background: url("../images/casual.svg");
-  background-size: cover;
+  background-size: 350px;
   background-position: center;
   background-repeat: no-repeat;
+  transition: all ease-in 0.1s;
 }
+
 #sports {
   background: url("../images/sports.svg");
-  background-size: cover;
+  /* background-size: cover; */
+  background-size: 350px;
+  transition: all ease-in 0.1s;
   background-position: center;
   background-repeat: no-repeat;
 }
 #formal {
   background: url("../images/formal.svg");
   background-size: cover;
+  background-size: 350px;
+  transition: all ease-in 0.1s;
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -213,7 +264,7 @@ transition:all ease-in 0.5s ;
 .featured-container {
   display: flex;
   width: 100vw;
-align-items: center;
+  align-items: center;
   margin-top: 2rem;
   gap: 10px;
   flex-direction: column;
@@ -238,10 +289,12 @@ align-items: center;
   border-radius: 5px;
   overflow: hidden;
   text-decoration: none;
+  border: 1px solid white;
   color: black;
 }
 
 .featured-card:hover {
+  border: 1px solid black;
   cursor: pointer;
 }
 
@@ -295,6 +348,7 @@ align-items: center;
 }
 
 .featured-txt {
+  text-overflow: ellipsis;
   font-weight: 500;
   text-align: center;
   background: white;
@@ -331,12 +385,12 @@ align-items: center;
   .categories-items {
     flex-direction: row;
     width: 1400px;
-    gap:10px;
+    gap: 10px;
     justify-content: center;
   }
   .btn-action {
     font-size: 1em;
-    font-family: "Montserrat";
+    font-family: "Poppins";
     /* margin-top: 0.2rem; */
     background-color: black;
     color: white;
@@ -365,6 +419,7 @@ align-items: center;
   }
 
   .featured-txt {
+    text-overflow: ellipsis;
     font-size: 1.1rem;
   }
 

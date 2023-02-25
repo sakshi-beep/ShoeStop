@@ -26,8 +26,12 @@ const updateQuantity = (id, quantity, type) => {
       quantity: quantity,
     },
     (result) => {
-      $("table").load("cartScreen.php table");
-      console.log(result);
+      // $(".container").empty();
+      $(".container").load("cartScreen.php .container");
     }
   );
+};
+
+const checkout = () => {
+  window.location.href = "../screens/checkout.php";
 };

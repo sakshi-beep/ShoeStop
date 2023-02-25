@@ -22,7 +22,7 @@
             <img src="./images/shoelogo.svg" class="shoeimage-mobile" id="shoe" />
         </div>
         <div class="description">
-            <h1 class="mainheading">WALK THE TALK</h1>
+            <h1 class="mainheading">Step Up and Never go back </h1>
             <p class="subheading">Get your favourite pair in exclusive price only at ShoesTop</p>
             <button class="btn-action">Shop Now</button>
         </div>
@@ -34,12 +34,15 @@
         <h2 class="container-title">Categories</h2>
         <div class="categories-items">
             <a class="item" id="casual" href="./screens/casualScreen.php">
+                <div class="background">Casual</div>
                 Casual
             </a>
             <a class="item" id="sports" href="./screens/sportsScreen.php">
+                <div class="background">Sports</div>
                 Sports
             </a>
             <a class="item" id="formal" href="./screens/formalScreen.php">
+                <div class="background">Formal</div>
                 Formal
             </a>
         </div>

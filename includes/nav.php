@@ -20,11 +20,12 @@ if(isset($_SESSION['cart'])){
 </head>
 
 
-<nav class="navbar navbar-light sticky top-10  navbar-expand-lg p-1"
-    style=" background-color:#F1F0F0;box-shadow:0px 2px 4px 1px rgba(0, 0, 0, 0.2);">
+<nav class="navbar navbar-light navbar-expand-lg p-2"
+    style=" background-color:#F1F0F0;box-shadow:0px 2px 4px 1px rgba(0, 0, 0, 0.2); position:sticky; top:0; z-index:9999;">
 
 
-    <a href="../index.php" class="navbar-brand"><img src="/shoestop/images/logo-big.svg" class="main-logo" /></a>
+    <a href="../index.php" class="navbar-brand"><img src="/shoestop/images/main-logo.svg"
+            style="height:3.5rem; width:8rem" /></a>
     <button class="navbar-toggler bg-black" data-bs-toggle="collapse" data-bs-target="#navbar">
         <img src="/shoestop/images/hamburger.svg">
     </button>

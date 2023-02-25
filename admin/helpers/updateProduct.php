@@ -15,7 +15,7 @@ $isFeatured = $_POST['isFeatured'];
 $in_stock = $_POST['in_stock']; 
 
 
-$query = mysqli_query($connect, "UPDATE  Shoes SET `s_id` = DEFAULT, `s_name` ='$s_name', `s_category`='$s_category', `s_size`='$s_size', `s_price`= '$s_price', `in_stock`='$in_stock', `s_quantity`= '$s_quantity', `s_photo`='$s_photo', `isFeatured`= '$isFeatured' WHERE `Shoes`.`s_id` = '$s_id'");
+$query = mysqli_query($connect, "UPDATE  Shoes SET  `s_name` ='$s_name', `s_category`='$s_category', `s_size`='$s_size', `s_price`= '$s_price', `in_stock`='$in_stock', `s_quantity`= '$s_quantity', `s_photo`='$s_photo', `isFeatured`= '$isFeatured' WHERE `Shoes`.`s_id` = '$s_id'");
 
 if($query){
     echo 'Product Updated';

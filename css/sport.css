@@ -16,7 +16,7 @@ h3 {
   color: rgb(145, 143, 143);
 }
 
-.casual-card {
+.sports-card {
   position: relative;
   background: white;
   width: 49%;
@@ -26,29 +26,28 @@ h3 {
   border-radius: 5px;
   overflow: hidden;
   text-decoration: none;
-  border: 1px solid white;
   color: black;
+  border: 1px solid white;
 }
 
-.casual-card:hover {
+.sports-card:hover {
   border: 1px solid black;
   text-decoration: none;
   color: black;
 }
-
 .image-container {
   width: 100%;
   /* height:300px; */
 }
 
-.casual-img {
+.sports-img {
   object-fit: cover;
   height: 190px;
   max-height: 200px;
   width: 100%;
 }
 
-.casual-desc {
+.sports-desc {
   display: flex;
   flex-direction: column;
   background: white;
@@ -56,19 +55,18 @@ h3 {
   padding: 16px 16px 0px 16px;
 }
 
-.casual-txt {
+.sports-txt {
   font-weight: 500;
   text-align: center;
   background: white;
   font-size: min(0.9rem, 1.2rem);
 }
 
-.casual-products {
+.sports-products {
   margin-top: 35px;
   display: flex;
   width: 100%;
-  /* max-width: 1400px; */
-  gap: 10px;
+  gap: 30px;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
 }

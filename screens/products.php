@@ -20,18 +20,7 @@ $query = mysqli_query($connect, "SELECT * FROM Shoes WHERE s_id = '$id'");
 </head>
 
 <body>
-    <!-- <div style="width:100%;height:70px;background:yellow"></div> -->
-    <nav class="navbar">
-        <div class="logoandmenu">
-
-            <div class="logo_container">
-                <img src="../images/logo-big.svg" alt="Shoe logo" class="logo">
-            </div>
-        </div>
-        <a class="hamburger">
-            <img src="../images/hamburger.svg">
-        </a>
-    </nav>
+    <?php include "../includes/nav.php"?>
     <div class="main_container">
         <?php foreach($query as $featured){
             echo '
@@ -62,7 +51,7 @@ $query = mysqli_query($connect, "SELECT * FROM Shoes WHERE s_id = '$id'");
                         </div>
                     </div>
                 <div class="btn_container">
-                    <button class ="btn" onclick="product.addtoCart('.$featured['s_id'].','.$featured['s_price'].' )">Add to Cart</button>
+                    <button class ="btn-add" onclick="product.addtoCart('.$featured['s_id'].','.$featured['s_price'].' )">Add to Cart</button>
                 </div>
             </div>
         </div>

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,25 +15,27 @@
 
 <body>
     <div class="container">
-        <img src="../images/logo-big.svg" class="mainlogo">
+        <img src="../images/main-logo.svg" class="mainlogo">
         <div class="form-container">
             <p class="signup-title">signup</p>
             <form class="signup-form" method="POST">
-            <div class="inputs-div">
+                <div class="inputs-div">
                     <label class="input-labels" for="fullname-input">Full Name</label>
-                    <input type="text" placeholder="Enter your fullname" class="form-inputs" name="fullname" id="fullname-input"/>
+                    <input type="text" placeholder="Enter your fullname" class="form-inputs" name="fullname"
+                        id="fullname-input" />
                     <span id="required-fullname" class="required-field"></span>
-                </div>   
-            <div class="inputs-div">
+                </div>
+                <div class="inputs-div">
                     <label class="input-labels" for="email-input">Email</label>
-                    <input type="email" placeholder="Enter your email" class="form-inputs" name="email" id="email-input"/>
+                    <input type="email" placeholder="Enter your email" class="form-inputs" name="email"
+                        id="email-input" />
                     <span id="required-email" class="required-field"></span>
                 </div>
                 <div class="inputs-div">
                     <label class="input-labels" for="password-input">Password</label>
                     <div id="password-field">
                         <input type="password" placeholder="Enter your password" name="password" id="password-input"
-                            class="form-inputs" onfocus="toggleVisibility()"/>
+                            class="form-inputs" onfocus="toggleVisibility()" />
                         <button id="btn-eye" onclick="togglePassword()">Show</button>
                     </div>
                     <span id="required-password" class="required-field"></span>

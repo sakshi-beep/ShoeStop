@@ -18,7 +18,7 @@ h2 {
   text-align: center;
 }
 
-.container {
+.checkout {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -29,55 +29,12 @@ h2 {
 }
 
 .cart {
-  flex: 2;
+  width: 800px;
   padding: 1rem;
-  /* margin-top: 80px; */
   height: max-content;
   background: #ffffff;
   box-shadow: 1.07636px 2.15273px 5.38182px rgba(0, 0, 0, 0.25);
   border-radius: 5.38182px;
-}
-
-.checkout-container {
-  flex: 1;
-  display: flex;
-  border-radius: 10px;
-  border: 1px solid black;
-  padding: 10px 10px;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.checkout-details {
-  width: 100%;
-  justify-content: space-between;
-  display: flex;
-  flex-direction: row;
-}
-
-.checkout-items {
-  display: flex;
-}
-
-p {
-  font-size: 18px;
-  padding: 0px 5px;
-}
-
-span {
-  font-size: 18px;
-}
-
-.checkout-price {
-  display: flex;
-}
-
-.total {
-  display: flex;
-  width: 100%;
-  font-weight: bold;
-  justify-content: space-between;
 }
 
 h2 {
@@ -100,7 +57,6 @@ th {
   padding: 8px 0;
 }
 tr {
-  display: flex;
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -115,26 +71,6 @@ td {
 .product_row {
   background: white;
   border-bottom: 1px solid #eae8e8;
-}
-
-.quantity-btn {
-  border: 1px solid rgb(16, 16, 16);
-  color: white;
-  font-size: 16px;
-  font-weight: 500;
-  background: rgb(16, 16, 16);
-  padding: 0.2em 0.7em;
-  font-size: 24px;
-}
-
-.quantity-btn:hover {
-  border: 1px solid black;
-}
-
-button {
-  border: none;
-  background: none;
-  cursor: pointer;
 }
 
 .product-img {
@@ -161,5 +97,46 @@ button {
 }
 
 .checkout-button:hover {
+  background: black;
+}
+
+.checkout-form {
+  display: flex;
+  padding: 20px 20px;
+  flex-direction: column;
+  border: 1px solid black;
+}
+
+.checkout-input {
+  height: 40px;
+  width: 100%;
+  border-radius: 5px;
+  padding: 5px 5px;
+}
+
+select {
+  height: 40px;
+  width: 100%;
+  border-radius: 5px;
+  padding: 5px 5px;
+}
+
+h4 {
+  text-align: center;
+}
+
+label {
+  font-weight: 500;
+  padding: 0px 0px 5px 0px;
+}
+
+.order-btn {
+  margin-top: 10px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
   background: black;
 }
