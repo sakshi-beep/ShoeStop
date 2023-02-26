@@ -1,7 +1,5 @@
 <?php
-
 session_start();
-
 $total = $_SESSION['total_price'];
 ?>
 
@@ -14,7 +12,7 @@ $total = $_SESSION['total_price'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
     <link rel="stylesheet" href="../css/checkout.css" />
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="https://khalti.s3.ap-south-1.amazonaws.com/KPG/dist/2020.12.17.0.0.0/khalti-checkout.iffe.js"></script>
 </head>
 
@@ -63,66 +61,112 @@ $total = $_SESSION['total_price'];
             </select>
             <br>
             <label for="total_price">Total Price:</label>
-            <input type="text" name="total_price" value="<?php echo $_SESSION['total_price']; ?>" readonly class="checkout-input">
-            <button id="payment-button" class="order-btn" onclick="proceedPayment()">Place Order</button>
-            <!-- <button class="order-btn" onclick="proceedPayment()">Place Order</button> -->
+            <input type="text" name="total_price" value="<?php echo $_SESSION['total_price']; ?>" readonly
+                class="checkout-input">
+            <button id="payment-button" class="order-btn" onclick="proceedPayment()"
+                style="display:none; justify-content:center; background-color:#462669">Pay with
+                Khalti</button>
+            <button type="submit" id="esewa" class="order-btn" onclick="esewaPayment()"
+                style="width:100%; background-color:#60BB46; display:none; justify-content:center">Pay with
+                esewa</button>
         </div>
+
     </div>
     <script>
-        const select = document.getElementById("select");
-        select.onchange = function() {
-            if (select.value === 'khalti') {
-                document.getElementById("payment-button").style.backgroundColor = "#5E338D"
-                document.getElementById("payment-button").innerHTML = "Pay with Khalti"
+    const select = document.getElementById("select");
+    const esewabutton = document.getElementById("esewa").style;
+    const khaltibutton = document.getElementById("payment-button").style;
+    select.onchange = function() {
+        if (select.value === 'khalti' && khaltibutton.display == "none") {
+            khaltibutton.display = "flex"
+            esewabutton.display = "none"
 
-            }
-            if (select.value === "e-sewa") {
-                document.getElementById("payment-button").style.backgroundColor = "#60BB46"
-                document.getElementById("payment-button").innerHTML = "Pay with e-sewa"
-            }
+            document.getElementById("payment-button").innerHTML = "Pay with Khalti"
         }
+        if (select.value === "e-sewa" && esewabutton.display === "none") {
+            esewabutton.display = "flex"
+            khaltibutton.display = "none"
 
-        const proceedPayment = () => {
-            const payment_method = document.getElementById("select").value;
-            const shipping_address = document.getElementById("shipping_address").value
-            var config = {
-                "publicKey": "test_public_key_1059426c6e474dcd8aba71df6f39df8f",
-                "productIdentity": "<?php echo $id ?>",
-                "productName": "<?php echo $name; ?>",
-                "productUrl": "http://localhost/products.php",
-                "paymentPreference": [
-                    "KHALTI",
-                ],
-                "eventHandler": {
-                    onSuccess(payload) {
-                        $.post("../includes/order.php", {
-                            shipping_address: shipping_address,
-                            payment_method: payment_method
-                        }, result => {
-                            if (result === "payment successfull")
-                                alert(result);
-                            window.location.href = "../index.php";
-                        })
-                        console.log(payload)
-                    },
-                    onError(error) {
-                        console.log(error);
-                    },
-                    onClose() {
-                        console.log('widget is closing');
-                    }
+        }
+    }
+
+    const proceedPayment = () => {
+        const payment_method = document.getElementById("select").value;
+        const shipping_address = document.getElementById("shipping_address").value
+        var config = {
+            "publicKey": "test_public_key_1059426c6e474dcd8aba71df6f39df8f",
+            "productIdentity": "<?php echo $id ?>",
+            "productName": "<?php echo $name; ?>",
+            "productUrl": "http://localhost/products.php",
+            "paymentPreference": [
+                "KHALTI",
+            ],
+            "eventHandler": {
+                onSuccess(payload) {
+                    $.post("../includes/order.php", {
+                        shipping_address: shipping_address,
+                        payment_method: payment_method
+                    }, result => {
+                        if (result === "payment successfull")
+                            alert(result);
+                        window.location.href = "../index.php";
+                    })
+                    console.log(payload)
+                },
+                onError(error) {
+                    console.log(error);
+                },
+                onClose() {
+                    console.log('widget is closing');
                 }
-            };
-
-            var checkout = new KhaltiCheckout(config);
-            var btn = document.getElementById("payment-button");
-            btn.onclick = function(event) {
-                event.preventDefault();
-                checkout.show({
-                    amount: <?php echo $total; ?>
-                });
             }
+        };
+
+        var checkout = new KhaltiCheckout(config);
+        var btn = document.getElementById("payment-button");
+        btn.onclick = function(event) {
+            event.preventDefault();
+            checkout.show({
+                amount: <?php echo $total; ?>
+            });
         }
+
+    }
+
+    const esewaPayment = () => {
+        const payment_method = document.getElementById("select").value;
+        const shipping_address = document.getElementById("shipping_address").value
+        var path = "https://uat.esewa.com.np/epay/main";
+        var params = {
+            amt: "<?php echo $total ?>",
+            psc: 0,
+            pdc: 0,
+            txAmt: 0,
+            tAmt: "<?php echo $total ?>",
+            pid: "<?php echo $id; ?>",
+            scd: "EPAYTEST",
+            su: `http://localhost/shoestop/includes/esewa.php?q=su&payment_method=${payment_method}&shipping_address=${shipping_address}`,
+            fu: `http://localhost/shoestop/fail.php?q=fu&payment_method=${payment_method}&shipping_address=${shipping_address}`
+        }
+
+        function post(path, params) {
+            var form = document.createElement("form");
+            form.setAttribute("method", "POST");
+            form.setAttribute("action", path);
+
+            for (var key in params) {
+                var hiddenField = document.createElement("input");
+                hiddenField.setAttribute("type", "hidden");
+                hiddenField.setAttribute("name", key);
+                hiddenField.setAttribute("value", params[key]);
+                form.appendChild(hiddenField);
+            }
+
+            document.body.appendChild(form);
+            form.submit();
+        }
+        post(path, params);
+    }
     </script>
 </body>
 
