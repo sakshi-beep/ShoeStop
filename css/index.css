@@ -296,6 +296,7 @@ a:hover {
 .featured-card:hover {
   border: 1px solid black;
   cursor: pointer;
+  color: black;
 }
 
 .hover-opacity {
@@ -431,4 +432,44 @@ a:hover {
   .featured-products {
     gap: 10px;
   }
+}
+
+.search-form {
+  position: relative;
+}
+
+.list {
+  display: flex;
+  padding: 5px 5px;
+  gap: 10px;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  display: flex;
+  cursor: pointer;
+}
+
+.list:hover {
+  background: white;
+  color: black;
+}
+
+p {
+  background: none;
+}
+
+#search-list {
+  padding: 10px 10px;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  position: absolute;
+  top: 60px;
+}
+
+.search-img {
+  object-fit: cover;
+  height: 50px;
+  width: 50px;
 }
