@@ -14,6 +14,8 @@ $total = $_SESSION['total_price'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
     <link rel="stylesheet" href="../css/checkout.css" />
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" defer></script>
+    <script src="https://khalti.s3.ap-south-1.amazonaws.com/KPG/dist/2020.12.17.0.0.0/khalti-checkout.iffe.js"></script>
 </head>
 
 <body>
@@ -41,14 +43,17 @@ $total = $_SESSION['total_price'];
   <td>" . $item['quantity'] . "</td>
   <td>" . $item['price'] . "</td>
 </tr>";
+
+                    $name = $item['name'];
+                    $id = $item['id'];
                 }
                 ?>
             </table>
         </div>
-        <form class="checkout-form" action="../includes/order.php" method="POST">
+        <div class="checkout-form">
             <h4>Checkout</h4>
             <label for="shipping_address">Shipping Address:</label>
-            <input type="text" name="shipping_address" required class="checkout-input">
+            <input type="text" name="shipping_address" required class="checkout-input" id="shipping_address">
             <br>
             <label for="payment_method">Payment Method:</label>
             <select name="payment_method" required id="select">
@@ -58,28 +63,66 @@ $total = $_SESSION['total_price'];
             </select>
             <br>
             <label for="total_price">Total Price:</label>
-            <input type="text" name="total_price" value="<?php echo $_SESSION['total_price']; ?>" readonly
-                class="checkout-input">
-            <button type="submit" class="order-btn">Place Order</button>
-        </form>
-        <form action="https://uat.esewa.com.np/epay/main" method="POST">
-            <input value="<?php echo $_SESSION['total_price']; ?>" name="tAmt" type="hidden">
-            <input value="<?php echo $_SESSION['total_price']; ?>" name="amt" type="hidden">
-            <input value="0" name="txAmt" type="hidden">
-            <input value="0" name="psc" type="hidden">
-            <input value="0" name="pdc" type="hidden">
-            <input value="EPAYTEST" name="scd" type="hidden">
-            <input value="ee2c3ca1-696b-4cc5-a6be-2c40d929d453" name="pid" type="hidden">
-            <input value="http://merchant.com.np/page/esewa_payment_success?q=su" type="hidden" name="su">
-            <input value="http://merchant.com.np/page/esewa_payment_failed?q=fu" type="hidden" name="fu">
-            <input value="Submit" type="submit">
-        </form>
-
+            <input type="text" name="total_price" value="<?php echo $_SESSION['total_price']; ?>" readonly class="checkout-input">
+            <button id="payment-button" class="order-btn" onclick="proceedPayment()">Place Order</button>
+            <!-- <button class="order-btn" onclick="proceedPayment()">Place Order</button> -->
+        </div>
     </div>
-    <script defer>
-    const placeOrder = () => {
-        alert(<?php echo $_SESSION['total_price'] ?>);
-    }
+    <script>
+        const select = document.getElementById("select");
+        select.onchange = function() {
+            if (select.value === 'khalti') {
+                document.getElementById("payment-button").style.backgroundColor = "#5E338D"
+                document.getElementById("payment-button").innerHTML = "Pay with Khalti"
+
+            }
+            if (select.value === "e-sewa") {
+                document.getElementById("payment-button").style.backgroundColor = "#60BB46"
+                document.getElementById("payment-button").innerHTML = "Pay with e-sewa"
+            }
+        }
+
+        const proceedPayment = () => {
+            const payment_method = document.getElementById("select").value;
+            const shipping_address = document.getElementById("shipping_address").value
+            var config = {
+                "publicKey": "test_public_key_1059426c6e474dcd8aba71df6f39df8f",
+                "productIdentity": "<?php echo $id ?>",
+                "productName": "<?php echo $name; ?>",
+                "productUrl": "http://localhost/products.php",
+                "paymentPreference": [
+                    "KHALTI",
+                ],
+                "eventHandler": {
+                    onSuccess(payload) {
+                        $.post("../includes/order.php", {
+                            shipping_address: shipping_address,
+                            payment_method: payment_method
+                        }, result => {
+                            if (result === "payment successfull")
+                                alert(result);
+                            window.location.href = "../index.php";
+                        })
+                        console.log(payload)
+                    },
+                    onError(error) {
+                        console.log(error);
+                    },
+                    onClose() {
+                        console.log('widget is closing');
+                    }
+                }
+            };
+
+            var checkout = new KhaltiCheckout(config);
+            var btn = document.getElementById("payment-button");
+            btn.onclick = function(event) {
+                event.preventDefault();
+                checkout.show({
+                    amount: <?php echo $total; ?>
+                });
+            }
+        }
     </script>
 </body>
 

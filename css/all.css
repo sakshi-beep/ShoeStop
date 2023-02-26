@@ -17,7 +17,7 @@ h3 {
   color: rgb(145, 143, 143);
 }
 
-.sports-card {
+.all-card {
   position: relative;
   background: white;
   width: 49%;
@@ -27,28 +27,29 @@ h3 {
   border-radius: 5px;
   overflow: hidden;
   text-decoration: none;
-  color: black;
   border: 1px solid white;
+  color: black;
 }
 
-.sports-card:hover {
+.all-card:hover {
   border: 1px solid black;
   text-decoration: none;
   color: black;
 }
+
 .image-container {
   width: 100%;
   /* height:300px; */
 }
 
-.sports-img {
+.all-img {
   object-fit: cover;
   height: 190px;
   max-height: 200px;
   width: 100%;
 }
 
-.sports-desc {
+.all-desc {
   display: flex;
   flex-direction: column;
   background: white;
@@ -56,18 +57,19 @@ h3 {
   padding: 16px 16px 0px 16px;
 }
 
-.sports-txt {
+.all-txt {
   font-weight: 500;
   text-align: center;
   background: white;
   font-size: min(0.9rem, 1.2rem);
 }
 
-.sports-products {
+.all-products {
   margin-top: 35px;
   display: flex;
   width: 100%;
-  gap: 30px;
+  /* max-width: 1400px; */
+  gap: 10px;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
 }

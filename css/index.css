@@ -253,7 +253,7 @@ a:hover {
   background-repeat: no-repeat;
 }
 #formal {
-  background: url("../images/formal.svg");
+  background: url("../images/formal.jpg");
   background-size: cover;
   background-size: 350px;
   transition: all ease-in 0.1s;
@@ -460,6 +460,7 @@ p {
 
 #search-list {
   padding: 10px 10px;
+  border: 1px solid gray;
   display: none;
   flex-direction: column;
   gap: 10px;

@@ -39,12 +39,62 @@ if (isset($_SESSION['cart'])) {
             $("#search-list").hide();
         }
     });
+    const dropdown = () => {
+        const dropItems = document.getElementById("drops").style;
+        if (dropItems.display == "none") {
+            dropItems.display = "flex";
+            dropItems.flexDirection = "column"
+        } else {
+            dropItems.display = "none"
+        }
+
+    }
     </script>
+
+    <style>
+    .dropdown {
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        background: #F1F0F0;
+        border: 1px solid gray;
+    }
+
+    .drops {
+        border: 1px solid gray;
+        display: none;
+        gap: 10px;
+        position: absolute;
+        top: 75px;
+        right: 20px;
+        padding: 10px;
+    }
+
+    .dropdown-list {
+        width: 100%;
+        text-decoration: none;
+        color: black;
+        padding: 10px;
+        width: max-content;
+        font-size: 16px;
+        cursor: pointer
+    }
+
+    .dropdown-list:hover {
+        padding: 10px;
+        background: white;
+        color: black;
+    }
+    </style>
 </head>
 
 
 <nav class="navbar navbar-light navbar-expand-lg p-2"
-    style=" background-color:#F1F0F0;box-shadow:0px 2px 4px 1px rgba(0, 0, 0, 0.2); position:sticky; top:0; z-index:9999;">
+    style=" background-color:#F1F0F0; border-bottom:1px solid lightgray;position:sticky; top:0; z-index:9999;">
 
 
     <a href="../index.php" class="navbar-brand"><img src="/shoestop/images/main-logo.svg"
@@ -62,15 +112,22 @@ if (isset($_SESSION['cart'])) {
             <div id="search-list"></div>
         </form>
 
-        <ul class="navbar-nav p-2">
-            <?php
-            if (isset($_SESSION['fullname'])) {
-                echo '<li class="nav-item"><a class="nav-link"><img src="/shoestop/images/userlogo.svg"/>' . $fullname . '</a></li>';
-                echo '<li class="nav-item"><a href="/shoestop/helpers/customerLogout.php" class="nav-link" style=""><img src="/shoestop/images/logout.svg"/></a></li>';
+        <ul class="navbar-nav p-2" style="display: flex; align-items:center; gap:15px; position:relative;">
+            <?php if (isset($_SESSION['fullname'])) {
+                echo
+                '<label onclick="dropdown()" class="nav-item dropdown" ><img src="/shoestop/images/userlogo.svg" /></label>
+            <li id="drops" class="nav-item drops">
+                <a class="dropdown-list">' . $_SESSION['fullname'] . '</a>
+            <a class="dropdown-list" href="/shoestop/helpers/customerLogout.php"><img src="/shoestop/images/logout.svg"
+                    style="background:none;" /></a>
+
+            </li>';
             } else {
                 echo '<li class="nav-item"><a href="/shoestop/screens/login.php" class="nav-link" style="margin-top: 6px">LOGIN</a></li>';
             }
             ?>
+
+
             <li class="nav-item <?php if (isset($item_count) > 0) {
                                     echo 'products-icon';
                                 }

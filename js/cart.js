@@ -5,7 +5,7 @@ const deleteCartItem = (id) => {
       id: id,
     },
     (result) => {
-      $("table").load("cartScreen.php table");
+      $(".container").load("cartScreen.php .container");
       console.log(result);
     }
   );
