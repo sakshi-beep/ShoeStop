@@ -107,9 +107,7 @@ $total = $_SESSION['total_price'];
                         shipping_address: shipping_address,
                         payment_method: payment_method
                     }, result => {
-                        if (result === "payment successfull")
-                            alert(result);
-                        window.location.href = "../index.php";
+                        console.log(result)
                     })
                     console.log(payload)
                 },

@@ -28,5 +28,5 @@ foreach ($_SESSION['cart'] as $key => $value) {
 if ($blah) {
     unset($_SESSION['total_price']);
     unset($_SESSION['cart']);
-    echo "payment successfull";
+    echo "<script>window.location.href='../success.php'</script>";
 }
