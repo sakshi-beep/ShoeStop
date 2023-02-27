@@ -7,14 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Products</title>
     <link rel="stylesheet" href="../css/all.css?v=<?php echo time() ?>" />
+    <link rel="stylesheet" href="../css/nav/">
 </head>
 
 
 <body class="main">
     <?php include "../includes/nav.php" ?>
     <div class="container">
-        <h1>All Categories</h1>
-        <h3>Every category of shoes all in one place</h3>
+        <div class="desc">
+
+            <h1>All Categories</h1>
+            <h3>Every category of shoes all in one place</h3>
+        </div>
         <div class="all-products">
             <?php
             include "../includes/dbconfig.php";

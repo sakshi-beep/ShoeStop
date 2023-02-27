@@ -10,8 +10,8 @@
   font-family: "Montserrat";
 }
 
-
 #content-container {
+  position: relative;
   display: flex;
   width: 100%;
   align-items: flex-start;
@@ -30,11 +30,11 @@
 
 #orders-container {
   display: flex;
-  padding:10px;
+  padding: 10px;
   width: 100%;
   justify-content: space-between;
-gap: 10px;
-  height:100%;
+  gap: 10px;
+  height: 100%;
   flex-direction: row;
   align-items: center;
   overflow-x: scroll;
@@ -81,72 +81,70 @@ gap: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding:0 1rem;
-  min-width:max-content;
+  padding: 0 1rem;
+  min-width: max-content;
   background-color: #ffffff;
-  box-shadow: 2px 4px 4px 1px rgba(0, 0, 0, 0.10);
+  box-shadow: 2px 4px 4px 1px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
 }
-.img-div{
-overflow: hidden;
-height:150px;
-display:flex;
-justify-content: center;
-   width:100%;
-   background-color:white;
-}
-
-.product-img{
-  height:100%;
-   width:50%;
-   object-fit:cover;
-}
-
-.order-details{
-  display:flex;
-  flex-direction: column;
-   justify-content:space-between;
-    width:100%;
+.img-div {
+  overflow: hidden;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
   background-color: white;
 }
 
-.details-container{
-  margin: 5px 0;
-background-color: white;
-  display:flex;
-justify-content: space-between;
+.product-img {
+  height: 100%;
+  width: 50%;
+  object-fit: cover;
 }
 
-.detail-title{
+.order-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  background-color: white;
+}
+
+.details-container {
+  margin: 5px 0;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.detail-title {
   background-color: white;
   font-weight: 700;
   font-size: 0.8em;
   color: #000000;
 }
 
-.detail-values{
+.detail-values {
   background-color: white;
 
   font-weight: 500;
-font-size: 0.8rem;
-color: #757070;
+  font-size: 0.8rem;
+  color: #757070;
 }
 
-.redirect-icon{
+.redirect-icon {
   display: none;
 }
 
-.redirect-icon a{
+.redirect-icon a {
   background-color: white;
 }
 
-
-
 @media (min-width: 768px) {
-  .redirect-icon{
+  .redirect-icon {
     display: block;
   }
-  
+
   /* #menu-container {
     position: relative;
     display: flex;
@@ -177,10 +175,11 @@ color: #757070;
 
   #orders-container {
     display: flex;
-    padding:10px;
+    padding: 5px 0px;
     width: 100%;
-    height:100%;
-    gap:2rem;
+    height: 100%;
+    gap: 1rem;
+    justify-content: flex-start;
     flex-direction: column;
     align-items: center;
     overflow-y: scroll;
@@ -189,54 +188,72 @@ color: #757070;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    padding:0.7rem 1rem;
+    padding: 0.7rem 1rem;
     height: 105px;
     width: 80%;
-    max-width:80rem;
+    max-width: 80rem;
     align-items: center;
+    cursor: pointer;
+    border: 1px solid white;
   }
-  .img-div{
-    height:80%;
-     width:7.5%;
-     border-radius:25.5px;
+  .orders-card:hover {
+    border: 1px solid black;
+  }
+  .img-div {
+    height: 80%;
+    width: 7.5%;
+    border-radius: 25.5px;
   }
 
-    .product-img{
-      height:100%;
-       width:100%;
-       overflow: hidden;
-    }
-  .order-details{
+  .product-img {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+  .order-details {
     background-color: white;
     flex-direction: row;
-    display:flex;
+    display: flex;
     justify-content: space-around;
-
   }
-  
-  .details-container{
-  background-color: white;
-    display:flex;
-    gap:10px;
+
+  .details-container {
+    background-color: white;
+    display: flex;
+    gap: 10px;
     flex-direction: column;
     align-items: center;
   }
-  
-  .detail-title{
+
+  .detail-title {
     background-color: white;
-  
+
     font-weight: 700;
     font-size: 1.3em;
     color: #000000;
   }
-  
-  .detail-values{
-    background-color: white;
-  
-    font-weight: 500;
-  font-size: 1.3rem;
-  color: #757070;
-  }
-  
 
+  .detail-values {
+    background-color: white;
+
+    font-weight: 500;
+    font-size: 1.3rem;
+    color: #757070;
+  }
+}
+
+#blah {
+  display: none;
+  position: absolute;
+  z-index: 99999;
+  height: 100vh;
+  width: 100vw;
+  background-color: gray;
+}
+
+.modal-container {
+  padding: 10px;
+  width: 350px;
+  height: 300px;
+  background-color: white;
 }

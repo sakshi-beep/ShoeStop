@@ -15,7 +15,8 @@ if (isset($_SESSION['cart'])) {
     <link href="/shoestop/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
     <script src="/shoestop/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <link rel="../css/index.css?v32453" />
+    <!-- <link rel="../css/index.css?v32453" /> -->
+    <link rel="../css/nav.css?v32453" />
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" defer></script>
     <script defer>
     const search = () => {

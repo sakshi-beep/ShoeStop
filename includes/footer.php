@@ -9,22 +9,48 @@
     <style>
     footer {
         display: flex;
+        align-items: center;
         justify-content: center;
         width: 100%;
-        background-color: red;
-        padding: 20px 0px;
+        margin-top: 30px;
+        background-color: black;
+        padding: 30px 0px;
     }
 
     .footer-container {
-
+        display: flex;
+        gap: 40px;
+        justify-content: center;
+        background-color: inherit;
         max-width: 1400px;
+    }
+
+    .copyright {
+        background-color: inherit;
+        color: white;
+        margin: 0;
+    }
+
+    .personal-touch {
+        font-size: 18px;
+        color: white;
+        margin: 0;
+        margin-top: 5px;
+    }
+
+    .line {
+        font-size: 28px;
+        color: white;
+        margin: 0;
     }
     </style>
 </head>
 
 <footer>
     <div class="footer-container">
-        <h1>afslkjfa;lskjda;sf</h1>
+        <h3 class="copyright">Copyright © Step Up.</h3>
+        <p class="line"> |</p>
+        <p class="personal-touch">Made with ❤️ by Sanjay Khadka.</p>
     </div>
 </footer>
 

@@ -9,12 +9,13 @@ if (isset($_SESSION['cart'])) {
 <head>
     <script defer src="../js/cart.js?v=2345432"></script>
     <link rel="stylesheet" href="../css/cart.css?v<?php echo time() ?>" />
+    <link rel="stylesheet" href="../css/nav.css">
     <title>Cart Screen</title>
 </head>
 
-<body>
+<body class="main-body">
     <?php include "../includes/nav.php" ?>
-    <div class="container">
+    <div class="cart-container">
         <div class="cart">
             <h2>Cart</h2>
             <table>
@@ -67,7 +68,7 @@ if (isset($_SESSION['cart'])) {
                 <div class="checkout-price">
 
                     <span>Rs. </span>
-                    <p><?php echo $price; ?></p>
+                    <p style="background-color: white;"><?php echo $price; ?></p>
                 </div>
 
             </div>
@@ -82,6 +83,8 @@ if (isset($_SESSION['cart'])) {
             ?>
         </div>
     </div>
+    <?php include "../includes/footer.php" ?>
+
 </body>
 
 </html>

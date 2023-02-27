@@ -15,6 +15,7 @@ body {
 }
 
 .category {
+  background-color: white;
   font-weight: 600;
 }
 
@@ -241,11 +242,13 @@ p {
 
   .product_size {
     font-weight: 500;
+    background-color: #fff;
     font-size: 1.5rem;
   }
 
   .size_container {
     display: flex;
+    background-color: #fff;
     gap: 30px;
   }
 
@@ -267,12 +270,14 @@ p {
 
   .quantity_container {
     display: flex;
+    background-color: #fff;
     flex-direction: column;
     gap: 23px;
   }
 
   .quantity {
     display: flex;
+    background-color: #fff;
     gap: 16px;
     align-items: center;
   }
@@ -309,4 +314,25 @@ p {
     height: 45px;
     background: black;
   }
+}
+
+.products-icon {
+  position: relative;
+}
+
+.products-icon ::after {
+  content: attr(data);
+  position: absolute;
+  top: -0.2rem;
+  left: 1.2rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: red;
 }

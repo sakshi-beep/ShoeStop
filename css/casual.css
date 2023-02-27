@@ -66,10 +66,15 @@ h3 {
 
 .casual-products {
   margin-top: 35px;
+  background-color: white;
   display: flex;
   width: 100%;
-  /* max-width: 1400px; */
-  gap: 10px;
+  gap: 30px;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+}
+
+.desc {
+  background-color: white;
+  padding-left: 54px;
 }

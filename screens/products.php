@@ -16,6 +16,7 @@ $query = mysqli_query($connect, "SELECT * FROM Shoes WHERE s_id = '$id'");
     <link rel="stylesheet" href="../css/products.css?v=<?php echo time(); ?>" />
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="../js/products.js?244345456534" defer></script>
+    <link rel="stylesheet" href="../css/nav.css">
     <title>Products</title>
 </head>
 
@@ -60,6 +61,7 @@ $query = mysqli_query($connect, "SELECT * FROM Shoes WHERE s_id = '$id'");
         ?>
 
     </div>
+    <?php include "../includes/footer.php" ?>
 </body>
 
 </html>

@@ -67,9 +67,14 @@ h3 {
 .all-products {
   margin-top: 35px;
   display: flex;
+  background-color: white;
   width: 100%;
-  /* max-width: 1400px; */
-  gap: 10px;
+  gap: 30px;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+}
+
+.desc {
+  background-color: white;
+  padding-left: 54px;
 }

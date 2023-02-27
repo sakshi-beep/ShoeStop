@@ -69,5 +69,11 @@ h3 {
   width: 100%;
   gap: 30px;
   flex-wrap: wrap;
+  background-color: white;
   justify-content: center;
+}
+
+.desc {
+  background-color: white;
+  padding-left: 54px;
 }
