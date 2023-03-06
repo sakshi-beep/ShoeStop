@@ -19,10 +19,10 @@
     <?php include './includes/nav.php' ?>
     <main class="hero">
         <div class="heroimage">
-            <img src="./images/shoelogo.svg" class="shoeimage-mobile" id="shoe" />
+            <img src="./images/newlogo.svg" class="shoeimage-mobile" id="shoe" />
         </div>
         <div class="description">
-            <h1 class="mainheading">Step up your style game with Step Up Shoes.</h1>
+            <h1 class="mainheading">Step up your style game.</h1>
             <p class="subheading">Get your favourite pair in exclusive price only at ShoesTop</p>
             <button class="btn-action" onclick="window.location.href='./screens/all.php'">Shop Now</button>
         </div>
@@ -55,7 +55,7 @@
 
             foreach ($featuredProduct as $isFeatured) {
 
-                echo '<a class="featured-card" href="/shoestop/screens/products.php?id=' . $isFeatured['s_id'] . '/' . $isFeatured['s_name'] . '">
+                echo '<a class="featured-card" href="/stepup/screens/products.php?id=' . $isFeatured['s_id'] . '/' . $isFeatured['s_name'] . '">
     <div class="image-container">
         <img src=' . $isFeatured['s_photo'] . '
             class="featured-img" />

@@ -4,13 +4,14 @@
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
-  background-color: #f1f0f0;
 }
 
 .container {
   padding: 50px 40px;
   background-color: white;
-  width: 1400px;
+  max-width: 1400px;
+  border: 1px solid rgba(128, 128, 128, 0.243);
+  border-top: none;
 }
 
 h3 {
@@ -43,7 +44,6 @@ h3 {
 
 .formal-img {
   object-fit: cover;
-  height: 190px;
   max-height: 200px;
   width: 100%;
 }
@@ -60,14 +60,17 @@ h3 {
   font-weight: 500;
   text-align: center;
   background: white;
-  font-size: min(0.9rem, 1.2rem);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: max(0.6rem, 1rem);
 }
 
 .formal-products {
   margin-top: 35px;
   display: flex;
   width: 100%;
-  gap: 30px;
+  gap: 5px;
   background-color: white;
   flex-wrap: wrap;
   justify-content: center;

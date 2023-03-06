@@ -26,7 +26,7 @@
 
             foreach ($allProduct as $isall) {
 
-                echo '<a class="all-card" href="/shoestop/screens/products.php?id=' . $isall['s_id'] . '/' . $isall['s_name'] . '">
+                echo '<a class="all-card" href="/stepup/screens/products.php?id=' . $isall['s_id'] . '/' . $isall['s_name'] . '">
     <div class="image-container">
         <img src=' . $isall['s_photo'] . '
             class="all-img" />

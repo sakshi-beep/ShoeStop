@@ -1,4 +1,4 @@
 const getId = (featuredId) => {
-    alert(featuredId);
-        window.location.href = `/shoestop/helpers/getFeaturedProducts.php?id=${featuredId}`;
+  alert(featuredId);
+  window.location.href = `/stepup/helpers/getFeaturedProducts.php?id=${featuredId}`;
 };

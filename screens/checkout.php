@@ -1,6 +1,11 @@
 <?php
 session_start();
-$total = $_SESSION['total_price'];
+if (isset($_SESSION['cart']) && isset($_SESSION['fullname'])) {
+    $total = $_SESSION['total_price'];
+} else {
+    // header("Location:../index.php");
+}
+echo '<script>alert("what")</script>';
 ?>
 
 <!DOCTYPE html>
@@ -118,8 +123,8 @@ $total = $_SESSION['total_price'];
                 tAmt: <?php echo $total ?>,
                 pid: <?php echo $id; ?>,
                 scd: "EPAYTEST",
-                su: `http://localhost/shoestop/includes/esewa.php?q=su&payment_method=${p}&shipping_address=${s}`,
-                fu: `http://localhost/shoestop/fail.php?q=fu&payment_method=${p}&shipping_address=${s}`
+                su: `http://localhost/stepup/includes/esewa.php?q=su&payment_method=${p}&shipping_address=${s}`,
+                fu: `http://localhost/stepup/fail.php?q=fu&payment_method=${p}&shipping_address=${s}`
             }
 
             function post(path, params) {

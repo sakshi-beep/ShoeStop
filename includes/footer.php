@@ -43,13 +43,31 @@
         color: white;
         margin: 0;
     }
+
+    @media (max-width:768px) {
+        .footer-container {
+            width: 100%;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .copyright {
+            font-size: 16px;
+        }
+
+        .personal-touch {
+            font-size: 14px;
+            border-top: 1px solid white;
+        }
+    }
     </style>
 </head>
 
 <footer>
     <div class="footer-container">
         <h3 class="copyright">Copyright © Step Up.</h3>
-        <p class="line"> |</p>
+        <!-- <p class="line"> |</p> -->
         <p class="personal-touch">Made with ❤️ by Sanjay Khadka.</p>
     </div>
 </footer>

@@ -9,7 +9,7 @@
 <body>
 <nav>
         <ul class="nav-link">
-            <li><a  onclick="menuShow()"><img src="/shoestop/images/hamburger.svg"></a></li>
+            <li><a  onclick="menuShow()"><img src="/stepup/images/hamburger.svg"></a></li>
         </ul>
 
     </nav>

@@ -4,13 +4,13 @@
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
-  background-color: #f1f0f0;
 }
 
 .container {
   padding: 50px 40px;
-  background-color: white;
   width: 1400px;
+  border: 1px solid rgba(128, 128, 128, 0.243);
+  border-top: none;
 }
 
 h3 {
@@ -58,9 +58,13 @@ h3 {
 
 .sports-txt {
   font-weight: 500;
+
   text-align: center;
   background: white;
-  font-size: min(0.9rem, 1.2rem);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: max(0.6rem, 1rem);
 }
 
 .sports-products {

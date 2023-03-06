@@ -26,7 +26,7 @@
 
             foreach ($sportsProduct as $issports) {
 
-                echo '<a class="sports-card" href="/shoestop/screens/products.php?id=' . $issports['s_id'] . '/' . $issports['s_name'] . '">
+                echo '<a class="sports-card" href="/stepup/screens/products.php?id=' . $issports['s_id'] . '/' . $issports['s_name'] . '">
     <div class="image-container">
         <img src=' . $issports['s_photo'] . '
             class="sports-img" />

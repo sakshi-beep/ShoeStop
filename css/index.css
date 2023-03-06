@@ -6,7 +6,6 @@
   box-sizing: border-box;
   list-style: none;
   text-decoration: none;
-  background-color: #f1f0f0;
   font-family: "Poppins";
 }
 
@@ -62,10 +61,11 @@ nav {
   justify-content: center;
   width: 100%;
   min-height: 30.938rem;
-  animation: increaseOpacity ease-in 1s forwards;
+  background-color: rgb(0, 0, 0);
 }
 
 .heroimage {
+  background: none;
   width: 100%;
   display: flex;
   align-items: center;
@@ -74,7 +74,7 @@ nav {
 
 .description {
   display: flex;
-  /* background-color:cadetblue; */
+  background: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -98,7 +98,10 @@ nav {
 }
 
 .mainheading {
+  text-align: center;
   margin-top: 0.75rem;
+  background: none;
+  color: white;
   font-weight: bold;
   font-family: "Poppins", sans-serif;
   font-size: 1.8em;
@@ -107,6 +110,7 @@ nav {
 .subheading {
   width: 15rem;
   height: 4.5rem;
+  color: white;
   margin-top: 0.7em;
   text-align: center;
   line-height: 1.5em;
@@ -119,7 +123,7 @@ nav {
   font-size: 0.8em;
   font-family: "Poppins";
   margin-top: 0.75rem;
-  background-color: black;
+  background-color: #5a189a;
   color: white;
   border: none;
   border-radius: 0.5em;
@@ -147,6 +151,7 @@ nav {
 }
 .categories-items {
   display: flex;
+  padding: 10px;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
@@ -342,6 +347,7 @@ a:hover {
 
 .featured-desc {
   display: flex;
+  overflow: hidden;
   flex-direction: column;
   background: white;
   width: 100%;
@@ -349,7 +355,11 @@ a:hover {
 }
 
 .featured-txt {
-  text-overflow: ellipsis;
+  display: block;
+  white-space: nowrap;
+  /* text-overflow: ellipsis;
+ */
+  word-wrap: break-word;
   font-weight: 500;
   text-align: center;
   background: white;
@@ -382,26 +392,33 @@ a:hover {
     height: 345px;
     text-decoration: none;
   }
-
+  .categories-container {
+    margin-top: 32px;
+  }
   .categories-items {
     flex-direction: row;
+    padding: 10px;
     width: 1400px;
     gap: 10px;
     justify-content: center;
   }
   .btn-action {
-    font-size: 1em;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
     font-family: "Poppins";
     /* margin-top: 0.2rem; */
-    background-color: black;
+    background-color: #5a189a;
     color: white;
     border: none;
-    border-radius: 0.5em;
-
+    text-align: center;
+    border-radius: 5px;
     width: 153px;
-    height: 47px;
-    left: 635px;
-    top: 594px;
+    height: 50px;
+  }
+
+  .btn-action:hover {
+    background-color: #59189abf;
   }
 
   .hamburgerlink {
@@ -409,6 +426,7 @@ a:hover {
   }
 
   .shoeimage-mobile {
+    background: none;
     margin-top: 69px;
     width: 235px;
     height: 235px;
@@ -420,6 +438,10 @@ a:hover {
   }
 
   .featured-txt {
+    overflow: hidden;
+    display: block;
+    text-align: center;
+    white-space: nowrap;
     text-overflow: ellipsis;
     font-size: 1.1rem;
   }
