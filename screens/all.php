@@ -8,7 +8,7 @@
     <title>All Products</title>
     <link rel="stylesheet" href="../css/all.css?v=<?php echo time() ?>" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="../css/nav/">
+    <link rel="stylesheet" href="../css/nav.css">
     <style>
     #btn-scroll {
         position: fixed;
