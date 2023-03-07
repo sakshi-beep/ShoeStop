@@ -75,12 +75,22 @@ h3 {
   background-color: white;
   display: flex;
   width: 100%;
-  gap: 30px;
+  gap: 5px;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .desc {
   background-color: white;
-  padding-left: 54px;
+  padding-left: 91px;
+}
+
+@media (max-width: 768px) {
+  .desc {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    padding: 0;
+    justify-content: center;
+  }
 }
