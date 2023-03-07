@@ -3,9 +3,9 @@ session_start();
 if (isset($_SESSION['cart']) && isset($_SESSION['fullname'])) {
     $total = $_SESSION['total_price'];
 } else {
-    // header("Location:../index.php");
+    header("Location:../index.php");
 }
-echo '<script>alert("what")</script>';
+// echo '<script>alert("what")</script>';
 ?>
 
 <!DOCTYPE html>
@@ -45,106 +45,107 @@ echo '<script>alert("what")</script>';
             </select>
             <br>
             <label for="total_price">Total Price:</label>
-            <input type="text" name="total_price" value="<?php echo $_SESSION['total_price']; ?>" readonly class="checkout-input">
+            <input type="text" name="total_price" value="<?php echo $_SESSION['total_price']; ?>" readonly
+                class="checkout-input">
             <button class="order-btn" id="btn" type="submit"> Place Order</button>
         </form>
 
     </div>
     <script defer>
-        const orderbutton = document.getElementById("btn");
+    const orderbutton = document.getElementById("btn");
 
-        orderbutton.onclick = function() {
-            const payment_method = document.getElementById("select").value;
-            const shipping_address = document.getElementById("shipping_address").value
-            if (payment_method === "khalti") {
+    orderbutton.onclick = function() {
+        const payment_method = document.getElementById("select").value;
+        const shipping_address = document.getElementById("shipping_address").value
+        if (payment_method === "khalti") {
 
-                proceedPayment(payment_method, shipping_address)
-            } else if (payment_method === "e-sewa") {
-                esewaPayment(payment_method, shipping_address)
-            } else if (payment_method === "cod") {
-                $.post("../includes/order.php", {
-                    shipping_address: shipping_address,
-                    payment_method: payment_method
-                }, result => {
-                    if (result == "payment successfull") {
-                        window.location.href = "../success.php"
-                    }
-                })
-            }
-        }
-
-        const proceedPayment = (p, s) => {
-            var config = {
-                "publicKey": "test_public_key_1059426c6e474dcd8aba71df6f39df8f",
-                "productIdentity": "<?php echo $id ?>",
-                "productName": "<?php echo $name; ?>",
-                "productUrl": "http://localhost/products.php",
-                "paymentPreference": [
-                    "KHALTI",
-                ],
-                "eventHandler": {
-                    onSuccess(payload) {
-                        $.post("../includes/order.php", {
-                            shipping_address: s,
-                            payment_method: p
-                        }, result => {
-                            if (result == "payment successfull") {
-                                window.location.href = "../success.php"
-                            }
-                        })
-                        console.log(payload)
-                    },
-                    onError(error) {
-                        if (result == "payment successfull") {
-                            window.location.href = "../success.php"
-                        };
-                    },
-                    onClose() {
-                        console.log('widget is closing');
-                    }
+            proceedPayment(payment_method, shipping_address)
+        } else if (payment_method === "e-sewa") {
+            esewaPayment(payment_method, shipping_address)
+        } else if (payment_method === "cod") {
+            $.post("../includes/order.php", {
+                shipping_address: shipping_address,
+                payment_method: payment_method
+            }, result => {
+                if (result == "payment successfull") {
+                    window.location.href = "../success.php"
                 }
-            };
-
-            var checkout = new KhaltiCheckout(config);
-            event.preventDefault();
-            checkout.show({
-                amount: <?php echo $total; ?>
             })
         }
+    }
 
-        const esewaPayment = (p, s) => {
-            event.preventDefault();
-            var path = "https://uat.esewa.com.np/epay/main";
-            var params = {
-                amt: <?php echo $total ?>,
-                psc: 0,
-                pdc: 0,
-                txAmt: 0,
-                tAmt: <?php echo $total ?>,
-                pid: <?php echo $id; ?>,
-                scd: "EPAYTEST",
-                su: `http://localhost/stepup/includes/esewa.php?q=su&payment_method=${p}&shipping_address=${s}`,
-                fu: `http://localhost/stepup/fail.php?q=fu&payment_method=${p}&shipping_address=${s}`
-            }
-
-            function post(path, params) {
-                var form = document.createElement("form");
-                form.setAttribute("method", "POST");
-                form.setAttribute("action", path);
-
-                for (var key in params) {
-                    var hiddenField = document.createElement("input");
-                    hiddenField.setAttribute("type", "hidden");
-                    hiddenField.setAttribute("name", key);
-                    hiddenField.setAttribute("value", params[key]);
-                    form.appendChild(hiddenField);
+    const proceedPayment = (p, s) => {
+        var config = {
+            "publicKey": "test_public_key_1059426c6e474dcd8aba71df6f39df8f",
+            "productIdentity": "<?php echo $id ?>",
+            "productName": "<?php echo $name; ?>",
+            "productUrl": "http://localhost/products.php",
+            "paymentPreference": [
+                "KHALTI",
+            ],
+            "eventHandler": {
+                onSuccess(payload) {
+                    $.post("../includes/order.php", {
+                        shipping_address: s,
+                        payment_method: p
+                    }, result => {
+                        if (result == "payment successfull") {
+                            window.location.href = "../success.php"
+                        }
+                    })
+                    console.log(payload)
+                },
+                onError(error) {
+                    if (result == "payment successfull") {
+                        window.location.href = "../success.php"
+                    };
+                },
+                onClose() {
+                    console.log('widget is closing');
                 }
-
-                document.body.appendChild(form);
-                form.submit();
             }
-            post(path, params);
+        };
+
+        var checkout = new KhaltiCheckout(config);
+        event.preventDefault();
+        checkout.show({
+            amount: <?php echo $total; ?>
+        })
+    }
+
+    const esewaPayment = (p, s) => {
+        event.preventDefault();
+        var path = "https://uat.esewa.com.np/epay/main";
+        var params = {
+            amt: <?php echo $total ?>,
+            psc: 0,
+            pdc: 0,
+            txAmt: 0,
+            tAmt: <?php echo $total ?>,
+            pid: <?php echo $id; ?>,
+            scd: "EPAYTEST",
+            su: `http://localhost/stepup/includes/esewa.php?q=su&payment_method=${p}&shipping_address=${s}`,
+            fu: `http://localhost/stepup/fail.php?q=fu&payment_method=${p}&shipping_address=${s}`
         }
+
+        function post(path, params) {
+            var form = document.createElement("form");
+            form.setAttribute("method", "POST");
+            form.setAttribute("action", path);
+
+            for (var key in params) {
+                var hiddenField = document.createElement("input");
+                hiddenField.setAttribute("type", "hidden");
+                hiddenField.setAttribute("name", key);
+                hiddenField.setAttribute("value", params[key]);
+                form.appendChild(hiddenField);
+            }
+
+            document.body.appendChild(form);
+            form.submit();
+        }
+        post(path, params);
+    }
     </script>
     <?php include "../includes/footer.php" ?>
 </body>

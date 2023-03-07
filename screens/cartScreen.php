@@ -1,6 +1,8 @@
 <?php session_start();
 if (isset($_SESSION['cart'])) {
     $count = count($_SESSION['cart']);
+} else {
+    header("Location:../index.php");
 }
 ?>
 <!DOCTYPE html>

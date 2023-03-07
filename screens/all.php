@@ -44,7 +44,7 @@
             bottom: 10px;
             padding: 10px;
             right: 45%;
-            bottom:
+
         }
 
         .arrow {

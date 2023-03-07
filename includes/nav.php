@@ -1,8 +1,6 @@
 <?php
-session_start();
-$fullname = $_SESSION['fullname'];
 if (isset($_SESSION['cart'])) {
-
+    $fullname = $_SESSION['fullname'];
     $item_count = count($_SESSION['cart']);
 }
 ?>
@@ -61,13 +59,14 @@ if (isset($_SESSION['cart'])) {
         height: 40px;
         width: 40px;
         border-radius: 50%;
-        background: #F1F0F0;
+        background: white;
         border: 1px solid gray;
     }
 
     .drops {
         border: 1px solid gray;
         display: none;
+        background: white;
         gap: 10px;
         position: absolute;
         top: 75px;
@@ -89,6 +88,20 @@ if (isset($_SESSION['cart'])) {
         padding: 10px;
         background: white;
         color: black;
+    }
+
+    .logout {
+        font-size: 18px;
+        border-radius: 5px;
+        font-weight: 600;
+        text-align: center;
+        border: 2px solid #CE2020;
+        width: 100%;
+    }
+
+    .logout:hover {
+        background: #CE2020;
+        color: white;
     }
     </style>
 </head>
@@ -116,11 +129,12 @@ if (isset($_SESSION['cart'])) {
         <ul class="navbar-nav p-2" style="display: flex; align-items:center; gap:15px; position:relative;">
             <?php if (isset($_SESSION['fullname'])) {
                 echo
-                '<label onclick="dropdown()" class="nav-item dropdown" ><img src="/stepup/images/userlogo.svg" /></label>
+                '<label onclick="dropdown()" class="nav-item dropdown" ><img src="/stepup/images/userlogo.svg" id="dropdown-label"/></label>
             <li id="drops" class="nav-item drops">
                 <a class="dropdown-list">' . $_SESSION['fullname'] . '</a>
-            <a class="dropdown-list" href="/stepup/helpers/customerLogout.php"><img src="/stepup/images/logout.svg"
-                    style="background:none;" /></a>
+            <a class="dropdown-list logout" href="/stepup/helpers/customerLogout.php">
+            Logout
+           </a>
 
             </li>';
             } else {
