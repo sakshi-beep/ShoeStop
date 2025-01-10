@@ -27,8 +27,8 @@ if (empty($_SESSION)) {
             <img src="./images/newlogo.svg" class="shoeimage-mobile" id="shoe" />
         </div>
         <div class="description">
-            <h1 class="mainheading">Step up your style game.</h1>
-            <p class="subheading">Get your favourite pair in exclusive price only at ShoesTop</p>
+            <h1 class="mainheading" >Be your best version.</h1>
+            <p class="subheading">Get any gears you want in exclusive price only at Step Up.</p>
             <button class="btn-action" onclick="window.location.href='./screens/all.php'">Shop Now</button>
         </div>
     </main>
@@ -60,7 +60,7 @@ if (empty($_SESSION)) {
 
             foreach ($featuredProduct as $isFeatured) {
 
-                echo '<a class="featured-card" href="/stepup/screens/products.php?id=' . $isFeatured['s_id'] . '/' . $isFeatured['s_name'] . '">
+                echo '<a class="featured-card" href="/Step up/screens/products.php?id=' . $isFeatured['s_id'] . '/' . $isFeatured['s_name'] . '">
     <div class="image-container">
         <img src=' . $isFeatured['s_photo'] . '
             class="featured-img" />

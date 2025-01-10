@@ -1,8 +1,7 @@
 <?php
 include '../../includes/dbconfig.php';
 
-$allProducts = mysqli_query($connect, "SELECT * from Shoes");
-
+$allProducts = mysqli_query($connect, query: "SELECT * from shoes");
 
 foreach($allProducts as $values){   
                     echo '<div class="product-card">

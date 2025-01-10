@@ -1,17 +1,24 @@
 <?php session_start();
+$cart = null;
 if (isset($_SESSION['cart'])) {
     $count = count($_SESSION['cart']);
 } else {
-    header("Location:../index.php");
+    $count = 0;
+    $_SESSION['cart'] = [];
 }
+$price = 0;
+
+    // header("Location:../index.php");
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <script defer src="../js/cart.js?v=2345432"></script>
+    <script src="../js/cart.js"></script>
     <link rel="stylesheet" href="../css/cart.css?v<?php echo time() ?>" />
     <link rel="stylesheet" href="../css/nav.css">
+    <!-- <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script> -->
     <title>Cart Screen</title>
 </head>
 
@@ -20,7 +27,7 @@ if (isset($_SESSION['cart'])) {
     <div class="cart-container">
         <div class="cart">
             <h2>Cart</h2>
-            <table>
+            <table class="cart-table">
                 <tr class="identifier_row">
                     <th>Product</th>
                     <th>Name</th>

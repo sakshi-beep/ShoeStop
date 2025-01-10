@@ -25,7 +25,7 @@
 
             foreach ($formalProduct as $isFormal) {
 
-                echo '<a class="formal-card" href="/stepup/screens/products.php?id=' . $isFormal['s_id'] . '/' . $isFormal['s_name'] . '">
+                echo '<a class="formal-card" href="/Step up/screens/products.php?id=' . $isFormal['s_id'] . '/' . $isFormal['s_name'] . '">
     <div class="image-container">
         <img src=' . $isFormal['s_photo'] . '
             class="formal-img" />

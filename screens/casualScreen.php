@@ -28,7 +28,7 @@
 
             foreach ($casualProduct as $isCasual) {
 
-                echo '<a class="casual-card" href="/stepup/screens/products.php?id=' . $isCasual['s_id'] . '/' . $isCasual['s_name'] . '">
+                echo '<a class="casual-card" href="/Step up/screens/products.php?id=' . $isCasual['s_id'] . '/' . $isCasual['s_name'] . '">
     <div class="image-container">
         <img src=' . $isCasual['s_photo'] . '
             class="casual-img" />

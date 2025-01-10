@@ -68,7 +68,7 @@
     <div class="footer-container">
         <h3 class="copyright">Copyright © Step Up.</h3>
         <!-- <p class="line"> |</p> -->
-        <p class="personal-touch">Made with ❤️ by Sanjay Khadka.</p>
+        <p class="personal-touch"></p>
     </div>
 </footer>
 

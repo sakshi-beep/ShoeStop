@@ -40,14 +40,14 @@ if (isset($_SESSION['cart']) && isset($_SESSION['fullname'])) {
             <select name="payment_method" required id="select">
                 <option value="">Select Payment Method</option>
                 <option value="cod">Cash on Delivery</option>
-                <option value="e-sewa" id="esewa">e-Sewa</option>
+                <!-- <option value="e-sewa" id="esewa">e-Sewa</option> -->
                 <option value="khalti" id="khalti">Khalti</option>
             </select>
             <br>
             <label for="total_price">Total Price:</label>
             <input type="text" name="total_price" value="<?php echo $_SESSION['total_price']; ?>" readonly
                 class="checkout-input">
-            <button class="order-btn" id="btn" type="submit"> Place Order</button>
+            <button class="order-btn" id="btn"> Place Order</button>
         </form>
 
     </div>
@@ -89,13 +89,15 @@ if (isset($_SESSION['cart']) && isset($_SESSION['fullname'])) {
                         shipping_address: s,
                         payment_method: p
                     }, result => {
-                        if (result == "payment successfull") {
+                        console.log(result, "result")
+                        if (result == "Payment successful") {
                             window.location.href = "../success.php"
                         }
                     })
                     console.log(payload)
                 },
                 onError(error) {
+                    console.log(error, "error")
                     if (result == "payment successfull") {
                         window.location.href = "../success.php"
                     };
@@ -109,7 +111,7 @@ if (isset($_SESSION['cart']) && isset($_SESSION['fullname'])) {
         var checkout = new KhaltiCheckout(config);
         event.preventDefault();
         checkout.show({
-            amount: <?php echo $total; ?>
+            amount: <?php echo $total * 100; ?>
         })
     }
 

@@ -22,7 +22,7 @@ return;
       password: password,
     },
     (result)=> {
-      if (result == "login successfull") {
+      if (result == "Login successful") {
         $("#successmessage").css("color", "green");
         $("#successmessage").show();
 

@@ -3,14 +3,19 @@ include '../../includes/dbconfig.php';
 
 extract($_POST);
 
-$id = $_POST['id'];
+$id = $_POST['id']; // Get the product ID from the POST request
 
-$deleteProduct = mysqli_query($connect, "DELETE FROM Shoes WHERE `Shoes`.`s_id` = '$id'");
+// Use a prepared statement to prevent SQL injection
+$stmt = $connect->prepare("DELETE FROM shoes WHERE s_id = ?");
+$stmt->bind_param("i", $id); // Bind the $id as an integer parameter
 
-
-if($deleteProduct){
+if ($stmt->execute()) {
+    
     echo 'Product Deleted';
+} else {
+    echo $stmt->error;
+    echo 'Sorry, failed to delete the product';
 }
-else{
-    echo 'Sorry Failed to delete Product';
-}
+
+$stmt->close(); // Close the prepared statement
+?>

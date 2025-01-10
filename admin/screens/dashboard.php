@@ -4,19 +4,18 @@ ini_set('display_errors', 1);
 $host = "localhost";
 $user = "root";
 $password = "";
-$dbname = "shoe-stop";
+$dbname = "stepup";
 $connect = mysqli_connect($host, $user, $password, $dbname);
 $total_products = mysqli_query($connect, "SELECT * FROM Shoes");
 $total_customers = mysqli_query($connect, "SELECT * FROM customers");
 $products_count = mysqli_num_rows($total_products);
 $customers_count = mysqli_num_rows($total_customers);
-$orders = mysqli_query($connect, "SELECT * from orders");
+$orders = mysqli_query($connect, "SELECT * from orders join order_details on orders.order_id = order_details.order_id WHERE orders.is_active='1'");
 $orders_count = mysqli_num_rows($orders);
 $sq = "SELECT
 orders.order_id,
 orders.status,
 orders.payment_method,
-orders.user_id,
 Shoes.s_name,
 Shoes.s_photo,
 Shoes.s_category,
@@ -24,15 +23,13 @@ order_details.price,
 order_details.size,
 order_details.quantity,
 order_details.id,
-customers.fullname,
-customers.email,
 orders.shipping_address,
 orders.status
 FROM
-orders
+orders  
 INNER JOIN order_details ON orders.order_id = order_details.order_id
 INNER JOIN Shoes ON order_details.product_id = Shoes.s_id
-INNER JOIN customers ON orders.user_id = customers.id
+where orders.is_active = '1'
 ";
 ?>
 <!DOCTYPE html>
@@ -44,15 +41,27 @@ INNER JOIN customers ON orders.user_id = customers.id
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
+<style>
+.modal-container {
+  padding: 20px;
+  width: 350px;
+  border-radius:20px;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  box-shadow: 0px 3px 67px 8px rgba(0,0,0,0.32);
+-webkit-box-shadow: 0px 3px 67px 8px rgba(0,0,0,0.32);
+-moz-box-shadow: 0px 3px 67px 8px rgba(0,0,0,0.32);
+  background-color: white;
+}
+</style>
 <body>
     <div id="content-container">
-        <div class="modal" id="blah" onclick="changeVisibility()"
+        <div class="modal" id="modal" onclick="changeVisibility()"
             style="position:absolute; display:none; width:100%; height:100%; z-index:1; background:transparent; align-items:center; justify-content:center">
-        </div>
+    </div>
         <label class="container-title">Dashboard</label>
         <div id="cards-container">
-
             <div class="card">
                 <img src="../images/admin-orders.svg" style="width:43px; background:none;">
                 <p class="card-title">Total orders</p>
@@ -76,13 +85,19 @@ INNER JOIN customers ON orders.user_id = customers.id
             $result = mysqli_query($connect, $sq);
             if (mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
-                    $fullname = $row['fullname'];
+                    $fullname ="Sakshi Thapa";
+                    $email = "pakulithapa@gmail.com";
                     $order = $row['id'];
-                    $email = $row['email'];
                     $payment_method = $row['payment_method'];
                     $shipping_address = $row['shipping_address'];
                     $status = $row["status"];
-                    echo '<div class="orders-card" onclick="openOrderModal(\'' . $fullname . '\',\'' . $email . '\',\'' . $payment_method . '\',\'' . $status . '\',\'' . $shipping_address . '\', ' . $order . ')">
+                    $productName = $row['s_name'];
+                    $size = $row['size'];
+                    $quantity = $row['quantity'];
+                    $price = $row['price'];
+                    $photo = $row['s_photo'];
+                    // $drive = "$fullname,$email, $payment_method, $status, $shipping_address, $order,$productName,$size, $price, $quantity, $photo";
+           echo '<div class="orders-card" onclick="openOrderModal(\'' . $fullname . '\',\'' . $email . '\',\'' . $payment_method . '\',\'' . $status . '\',\'' . $shipping_address . '\', \'' . $order . '\', \'' . $productName. '\', \'' . $size . '\', ' . $price. ', ' . $quantity. ', \'' . $photo. '\')">
                 <div class="img-div">
                     <img src="' . $row['s_photo'] . '" class="product-img">
                 </div>
@@ -108,6 +123,7 @@ INNER JOIN customers ON orders.user_id = customers.id
                     <a><img src="../images/arrow-right.svg" style="width:40px; background-color:white"></a>
                 </div>
             </div>';
+
                 }
             } else {
                 echo "No orders found.";
@@ -119,35 +135,43 @@ INNER JOIN customers ON orders.user_id = customers.id
 
     </div>
     <script defer>
-    const openOrderModal = (fullname, email, payment, status, shipping, order) => {
-        const open = document.getElementById("blah");
-        var isOpen = document.getElementById("blah").style.display;
+    const openOrderModal = (fullname, email, payment, status, shipping, order, name, size, price, quantity, photo) => {
+        const open = document.getElementById("modal");
+        var isOpen = document.getElementById("modal").style.display;
         if (isOpen === "none") {
-            document.getElementById("blah").style.display = "flex";
-            console.log(isOpen)
-
+            document.getElementById("modal").style.display = "flex";
             var modal = document.createElement("div");
             modal.classList.add("modal-container");
             modal.innerHTML = `
-    <h1>Order Details</h1>
-    <h2>Order by:</h2>
-    <p>${fullname}</p>
-    <h2>Email</h2>
-    <p>${email}</p>
-    <h2>Shipping Address</h2>
-    <p>${shipping}</p>
-    <h2>Payment Method</h2>
-    <p>${payment}</p>
-    <h2>status</h2>
-    <p>${status}</p>
-`;
+                    <p style="font-size:20px; font-weight:600">Order</p>
+    <div class="product-img-container" style="display:flex; width:100%; gap:20px;">
+        <div style="width: 80px; width:80px;">
+        <img src="${photo}" alt="" style="height:100%; width:100%; object-fit: cover;">
+        </div>
+        <div style="display:flex; flex-direction:column;gap:10px;">
+        <p style="font-size:14px; font-weight:600">${name}</p>
+        <p>Size <span>${size}</span></p>
+        </div>
+    </div>
+<div style="display:flex; justify-content:space-between; width:100%;">
+    <p style="font-size:14px; font-weight:600;">Qty ${quantity}</p>
+    <p style="font-size:14px; font-weight:600">${price} Rs</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:10px;">
+<p style="font-size:16px; font-weight:600">Shipping</p>
+<p style="font-size:14px; font-weight:500">${shipping}</p>
+</div>
+`;           
+            open.childNodes.forEach(child=>{
+                open.removeChild(child)
+            })
             open.appendChild(modal);
 
         }
 
     }
     const changeVisibility = () => {
-        var isOpen = document.getElementById("blah").style.display = "none";
+        var isOpen = document.getElementById("modal").style.display = "none";
     }
     </script>
 </body>

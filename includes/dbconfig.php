@@ -2,7 +2,7 @@
 $host="localhost";
 $user="root";
 $password="";
-$dbname="shoe-stop";
+$dbname="stepup";
 
 $connect=mysqli_connect($host,$user,$password,$dbname);
 

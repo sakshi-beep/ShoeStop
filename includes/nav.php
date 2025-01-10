@@ -10,9 +10,9 @@ if (isset($_SESSION['cart'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-    <link href="/stepup/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/Step up/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
-    <script src="/stepup/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/Step up/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- <link rel="../css/index.css?v32453" /> -->
     <link rel="../css/nav.css?v32453" />
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" defer></script>
@@ -20,7 +20,7 @@ if (isset($_SESSION['cart'])) {
     const search = () => {
         event.preventDefault()
         const product = document.getElementById("search-input").value;
-        $.post("/stepup/includes/search.php", {
+        $.post("/Step up/includes/search.php", {
             search: product
         }, result => {
             $("#search-list").html(result);
@@ -110,35 +110,34 @@ if (isset($_SESSION['cart'])) {
 <nav class="navbar navbar-light navbar-expand-lg p-2"
     style=" background-color:white; border-bottom:1px solid lightgray;position:sticky; top:0; z-index:9999;">
 
-
-    <a href="../index.php" class="navbar-brand"><img src="/stepup/images/main-logo.svg"
-            style="height:3.5rem; width:8rem" /></a>
+    <!-- <a href="../index.php" class="navbar-brand">Step Up</a> -->
+    <img src="/Step up/images/main-logo.svg" style="width:130px">
     <button class="navbar-toggler bg-black" data-bs-toggle="collapse" data-bs-target="#navbar">
-        <img src="/stepup/images/hamburger.svg">
+        <img src="/Step up/images/hamburger.svg">
     </button>
     <div class="navbar-collapse collapse" id="navbar">
         <form class="form-group-lg d-flex mx-auto p-2 search-form">
             <input class="form-control input-lg" type="search" placeholder="Search in the store"
                 aria-label="Search for products" id="search-input" />
 
-            <button onclick="search()" style="background:none; border:none;margin-left:10px; border-radius:10px"><img
-                    src="/stepup/images/search-icon.svg"></button>
-            <div id="search-list"></div>
+            <button onclick="search()" style="background:white ; border:none;margin-left:10px; border-radius:10px"><img
+                    src="/Step up/images/search-icon.svg"></button>
+            <div id="search-list" style = "background:white;"></div>
         </form>
 
         <ul class="navbar-nav p-2" style="display: flex; align-items:center; gap:15px; position:relative;">
             <?php if (isset($_SESSION['fullname'])) {
                 echo
-                '<label onclick="dropdown()" class="nav-item dropdown" ><img src="/stepup/images/userlogo.svg" id="dropdown-label"/></label>
+                '<label onclick="dropdown()"  class="nav-item dropdown" ><img src="/Step up/images/userlogo.svg" id="dropdown-label"/></label>
             <li id="drops" class="nav-item drops">
                 <a class="dropdown-list">' . $_SESSION['fullname'] . '</a>
-            <a class="dropdown-list logout" href="/stepup/helpers/customerLogout.php">
+            <a class="dropdown-list logout" href="/Step up/helpers/customerLogout.php">
             Logout
            </a>
 
             </li>';
             } else {
-                echo '<li class="nav-item"><a href="/stepup/screens/login.php" class="nav-link" style="margin-top: 6px">LOGIN</a></li>';
+                echo '<li class="nav-item"><a href="/Step up/screens/login.php" class="nav-link" style="margin-top: 6px">LOGIN</a></li>';
             }
             ?>
 
@@ -147,11 +146,11 @@ if (isset($_SESSION['cart'])) {
                                     echo 'products-icon';
                                 }
                                 ?>">
-                <a href="/stepup/screens/cartScreen.php" class="nav-link" <?php if (isset($item_count) > 0) {
+                <a href="/Step up/screens/cartScreen.php" class="nav-link" <?php if (isset($item_count) > 0) {
                                                                                 echo 'data= ' . $item_count . '';
                                                                             }
                                                                             ?> style="position:relative"><img
-                        src="/stepup/images/products.svg" />
+                        src="/Step up/images/products.svg" />
                 </a>
             </li>
 

@@ -100,3 +100,25 @@ const getPhotoUrl = () => {
     };
 
 }
+
+const deleteOrder = (orderid) => {
+ 
+    $.post("../helpers/deleteOrder.php", { oid: orderid }, function(result) {
+        if (result === "success") {
+$("#orders-container").load("orders.php #orders-container")
+        }
+        else {
+            alert(result);
+        }
+    })
+}
+const deleteUser= (userid) => {
+    $.post("../helpers/deleteUser.php", { uid: userid}, function(result) {
+        if (result === "success") {
+$("#orders-container").load("users.php #orders-container")
+        }
+        else {
+            alert(result);
+        }
+    })
+}

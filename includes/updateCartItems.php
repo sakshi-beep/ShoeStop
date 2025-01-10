@@ -17,6 +17,6 @@ foreach($cartItems as &$value){
 }
 $_SESSION['cart'] = $cartItems;
 unset($value);
-print_r ($_SESSION['cart'])
+echo "success";
 
 ?>

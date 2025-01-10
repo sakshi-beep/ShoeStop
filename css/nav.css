@@ -23,7 +23,7 @@
   cursor: pointer;
 }
 
-.list:hover {
+.list:hover { 
   background: rgba(198, 197, 197, 0.335);
   color: black;
 }

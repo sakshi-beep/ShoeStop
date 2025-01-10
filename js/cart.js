@@ -5,8 +5,9 @@ const deleteCartItem = (id) => {
       id: id,
     },
     (result) => {
-      $(".container").load("cartScreen.php .container");
-      console.log(result);
+      $(".cart-table").load("cartScreen.php .cart-table");
+      $(".checkout-details").load("cartScreen.php .checkout-details");
+      $(".total").load("cartScreen.php .total");
     }
   );
 };
@@ -27,7 +28,9 @@ const updateQuantity = (id, quantity, type) => {
     },
     (result) => {
       // $(".container").empty();
-      $(".container").load("cartScreen.php .container");
+      $(".cart-table").load("cartScreen.php .cart-table");
+      $(".checkout-details").load("cartScreen.php .checkout-details");
+      $(".total").load("cartScreen.php .total");
     }
   );
 };

@@ -15,7 +15,8 @@
 
 <body>
     <div class="container">
-        <img src="../images/main-logo.svg" class="mainlogo">
+        <!-- <img src="../images/main-logo.svg" class="mainlogo"> -->
+         <h1>Step Up</h1>
         <div class="form-container">
             <p class="signup-title">signup</p>
             <form class="signup-form" method="POST">

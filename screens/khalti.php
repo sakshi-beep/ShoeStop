@@ -18,11 +18,7 @@
         "productName": "Dragon",
         "productUrl": "http://gameofthrones.wikia.com/wiki/Dragons",
         "paymentPreference": [
-            "KHALTI",
-            "EBANKING",
-            "MOBILE_BANKING",
-            "CONNECT_IPS",
-            "SCT",
+            "KHALTI"
         ],
         "eventHandler": {
             onSuccess(payload) {
